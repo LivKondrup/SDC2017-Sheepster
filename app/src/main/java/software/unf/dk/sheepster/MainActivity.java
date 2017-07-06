@@ -3,6 +3,8 @@ package software.unf.dk.sheepster;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.Intent;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -12,6 +14,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+public void tolvl1(View view) {
+    Intent lvl1Intent = new Intent(this, lvl1Activity.class);
+    startActivity(lvl1Intent);
+}
 
 
 }
