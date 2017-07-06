@@ -20,5 +20,9 @@ public void tolvl1(View view) {
     startActivity(lvl1Intent);
 }
 
+public void tolvl2(View view) {
+        Intent lvl2Intent = new Intent(this, lvl2Activty.class);
+        startActivity(lvl2Intent);
+    }
 
 }

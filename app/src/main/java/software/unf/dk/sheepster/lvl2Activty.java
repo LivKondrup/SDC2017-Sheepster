@@ -6,15 +6,15 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 
-public class lvl1Activity extends Activity {
+public class lvl2Activty extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lvl1);
+        setContentView(R.layout.lvl2);
     }
 
-    public void backButton()
+    public void backButton2()
     {      //mangler test
         finish();
     }

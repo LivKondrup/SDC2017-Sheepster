@@ -19,6 +19,9 @@
         <activity android:name=".lvl1Activity">
 
         </activity>
+        <activity android:name=".lvl2Activty">
+
+        </activity>
     </application>
 
 </manifest>

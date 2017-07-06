@@ -15,4 +15,15 @@
         android:layout_marginBottom="170dp"
         android:onClick="tolvl1"
         android:text="Level 1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/level1"
+        android:layout_alignRight="@+id/level1"
+        android:layout_alignTop="@+id/level1"
+        android:layout_marginTop="74dp"
+        android:onClick="tolvl2"
+        android:text="Level 2" />
 </RelativeLayout>
