@@ -16,9 +16,10 @@ public class lvl1Activity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl1);
         clickCount = findViewById(R.id.countlvl1);
-        count = count2;
-        String count2 = "" + count;
-        clickCount.setText(count2);
+        // Gemmer klik, virker ikke
+        //count = count2;
+        //String count2 = "" + count;
+        //clickCount.setText(count2);
     }
 
     public void backButton(View view) {
