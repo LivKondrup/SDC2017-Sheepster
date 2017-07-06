@@ -16,6 +16,8 @@ public class lvl2Activty extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl2);
         clickCount2 = findViewById(R.id.countlvl2);
+        life = 3;
+
     }
 
     public void sheepCountButton2 (View view){
@@ -25,7 +27,7 @@ public class lvl2Activty extends MainActivity {
     }
 
     public void backButton2(View view) {
-
         finish();
     }
+
 }

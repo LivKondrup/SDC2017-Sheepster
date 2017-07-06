@@ -7,13 +7,25 @@ import android.content.Intent;
 import android.view.View;
 
 public class MainActivity extends Activity {
-public int count=0;
-public int count2;
+    public int count=0;
+    public int count2;
+    public int highscore=0;
+    public int life;
+
+    CanvasView cv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //cv = (CanvasView) findViewById(R.id.canvasView);
+
+    }
+
+    //Knappen kalder denne metode, som kalder metoden i CanvasView. I kan ikke få knapper til direkte at kalde metoder i jeres View
+    public void animation(View view) {
+        //cv.animation();
     }
 
     public void tolvl1(View view) {
