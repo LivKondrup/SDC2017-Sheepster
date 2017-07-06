@@ -26,4 +26,15 @@
         android:layout_marginTop="74dp"
         android:onClick="tolvl2"
         android:text="Level 2" />
+
+    <Button
+        android:id="@+id/skinselector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/level1"
+        android:layout_alignLeft="@+id/level1"
+        android:layout_alignStart="@+id/level1"
+        android:layout_marginBottom="61dp"
+        android:onClick="skinselector"
+        android:text="Skin selector" />
 </RelativeLayout>

@@ -28,10 +28,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="49dp"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2"
+        android:layout_marginBottom="44dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
         android:onClick="backButton"
         android:text="Back" />
+
+    <Button
+        android:id="@+id/clickSheep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="sheepCountButton"
+        android:text="Sheep" />
 
 </RelativeLayout>

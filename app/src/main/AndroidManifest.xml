@@ -22,6 +22,9 @@
         <activity android:name=".lvl2Activty">
 
         </activity>
+        <activity android:name=".skinSelectorActivity">
+
+        </activity>
     </application>
 
 </manifest>
