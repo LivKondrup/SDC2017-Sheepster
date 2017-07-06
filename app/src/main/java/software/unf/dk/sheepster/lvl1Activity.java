@@ -13,7 +13,10 @@ public class lvl1Activity extends Activity {
         setContentView(R.layout.lvl1);
     }
 
-    public void backButton (){      //mangler test
+
+
+    public void backButton (){      //der sker ikke noget
+
         finish();
     }
 }

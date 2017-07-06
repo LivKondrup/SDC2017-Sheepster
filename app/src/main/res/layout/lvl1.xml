@@ -23,27 +23,15 @@
         android:layout_toStartOf="@+id/countlvl1"
         android:text="Sheeps" />
 
-    <ImageButton
+    <Button
         android:id="@+id/backButton"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:adjustViewBounds="false"
-        android:background="@android:drawable/list_selector_background"
-        android:cropToPadding="false"
-        app:srcCompat="@android:drawable/button_onoff_indicator_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="49dp"
         android:layout_toLeftOf="@+id/textView2"
         android:layout_toStartOf="@+id/textView2"
         android:onClick="backButton"
-        android:layout_marginBottom="20dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/sheepStandard"
-        android:layout_below="@+id/countlvl1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp" />
+        android:text="back Button" />
 
 </RelativeLayout>
