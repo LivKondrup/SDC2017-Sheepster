@@ -34,6 +34,7 @@
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/textView2"
         android:layout_toStartOf="@+id/textView2"
+        android:onClick="backButton"
         android:layout_marginBottom="20dp" />
 
     <ImageButton

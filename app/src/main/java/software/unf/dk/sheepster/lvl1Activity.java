@@ -12,4 +12,8 @@ public class lvl1Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl1);
     }
+
+    public void backButton (){      //mangler test
+        finish();
+    }
 }
