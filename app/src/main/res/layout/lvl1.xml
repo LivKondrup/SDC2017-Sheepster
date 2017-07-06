@@ -32,6 +32,6 @@
         android:layout_toLeftOf="@+id/textView2"
         android:layout_toStartOf="@+id/textView2"
         android:onClick="backButton"
-        android:text="back Button" />
+        android:text="Back" />
 
 </RelativeLayout>

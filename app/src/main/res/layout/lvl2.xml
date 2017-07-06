@@ -13,5 +13,5 @@
         android:layout_marginLeft="39dp"
         android:layout_marginStart="39dp"
         android:onClick="backButton2"
-        android:text="Button" />
+        android:text="Back" />
 </RelativeLayout>
