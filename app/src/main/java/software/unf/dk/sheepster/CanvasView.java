@@ -72,7 +72,7 @@ public class CanvasView extends View {
         width = canvas.getWidth();
         if(sheepPosNotSet){
             sheepPosX = width;
-            sheepPosY = height;
+            sheepPosY = height-(height/5)*3;
             sheepPosNotSet = false;
         }
         //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
@@ -104,11 +104,26 @@ public class CanvasView extends View {
                 } catch (InterruptedException e) {
                     //Nothing
                 }
+                if (sheepPosX > 2*width/3){
+                    sheepPosX -= width/300;
+                } else if (sheepPosX < 2*width/3){
+                    sheepPosX -= width/300;
+                    sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
 
-                sheepPosX -= width/300;
-                sheepPosY = (((-0.1f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
+                }
+                //else if (sheepPosY > (height-(height/5)*3)+1){
+                  //  sheepPosX -= width/300;
+                }//else if (sheepPosX < width/3){
+                  //  sheepPosX -= width/300;
+               // }
+
+
+
                 postInvalidate();
+
+
             }
+
 
         }
     }
