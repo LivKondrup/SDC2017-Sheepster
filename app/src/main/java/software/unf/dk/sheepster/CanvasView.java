@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -49,6 +50,7 @@ public class CanvasView extends View {
         sky.setARGB(255,115,195,62);
         //Kan også bruge variabelNavn.setARGB(). A er gennemsigtigheden, R er rød, G er grøn og B er blå.
         //Brug den til at lave mere præcise farver.
+        postInvalidate();
     }
 
     public void animation(){
@@ -77,7 +79,6 @@ public class CanvasView extends View {
             //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
         //Bredden og højden skal være i pixels
         standardSheep = Bitmap.createScaledBitmap(standardSheep, width/3, height/3, true);
-
         canvas.drawBitmap(standardSheep, sheepPosX, sheepPosY, null);
 
 
@@ -96,7 +97,7 @@ public class CanvasView extends View {
                 }
 
                 sheepPosX -= width/300;
-                sheepPosY = sheepPosX*sheepPosX;
+                sheepPosY = (sheepPosX*sheepPosX)/4;
                 postInvalidate();
             }
 
