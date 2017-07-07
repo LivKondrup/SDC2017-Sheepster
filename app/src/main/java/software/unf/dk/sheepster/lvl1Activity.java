@@ -10,16 +10,19 @@ import android.widget.TextView;
 public class lvl1Activity extends MainActivity {
 
     private TextView clickCount;
+    private CanvasView lvl1Sheep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl1);
         clickCount = findViewById(R.id.countlvl1);
+        lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         // Gemmer klik, virker ikke
         //count = count2;
         //String count2 = "" + count;
         //clickCount.setText(count2);
+
     }
 
     public void backButton(View view) {
@@ -32,6 +35,8 @@ public class lvl1Activity extends MainActivity {
         count++;
         String count2 = "" + count;
         clickCount.setText(count2);
+        lvl1Sheep.animation();
+
     }
 
 // Gemmer klik, virker ikke.

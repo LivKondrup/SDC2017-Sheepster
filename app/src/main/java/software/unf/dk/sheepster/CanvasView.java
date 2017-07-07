@@ -2,6 +2,9 @@ package software.unf.dk.sheepster;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -13,20 +16,69 @@ import android.view.View;
 public class CanvasView extends View {
 
     //Feltvariabler
-    //Bitmap sheepstandard;
-    //int sheepPosX, height, width;
+    Bitmap standardSheep;
+    int sheepPosX, height, width;
     //Paint text, sky;
 
 
     public CanvasView(Context context) {
         super(context);
+        setup();
     }
 
     public CanvasView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        setup();
     }
 
     public CanvasView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setup();
+    }
+
+    public void setup(){
+        //Constructor
+        standardSheep = BitmapFactory.decodeResource(this.getResources(),R.drawable.sheepstandard);
+    }
+
+    public void animation(){
+        Timer animate = new Timer();
+        sheepPosX=0;
+        postInvalidate();
+        animate.start();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        //Få fat i højden og bredde af jeres View. I pixels
+        height = canvas.getHeight();
+        width = canvas.getWidth();
+
+        //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
+        //Bredden og højden skal være i pixels
+        standardSheep = Bitmap.createScaledBitmap(standardSheep, width/10, height/10, true);
+
+        canvas.drawBitmap(standardSheep, sheepPosX, height/4, null);
+
+
+
+    }
+
+    public class Timer extends Thread {
+        @Override
+        public void run() {
+
+            while(sheepPosX<width){
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    //Nothing
+                }
+
+                sheepPosX += width/100;
+                postInvalidate();
+            }
+
+        }
     }
 }
