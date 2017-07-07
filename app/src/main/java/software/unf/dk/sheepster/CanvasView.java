@@ -19,7 +19,7 @@ public class CanvasView extends View {
 
     //Feltvariabler
     Bitmap standardSheep;
-    int sheepPosX, height, width, sleepTime;
+    int sheepPosX, height, width, sleepTime, sheepPosY;
     boolean sheepPosNotSet;
     Paint sky;
 
@@ -66,6 +66,7 @@ public class CanvasView extends View {
         width = canvas.getWidth();
         if(sheepPosNotSet){
             sheepPosX = width;
+            sheepPosY = height/2;
             sheepPosNotSet = false;
         }
         //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
@@ -77,7 +78,7 @@ public class CanvasView extends View {
         //Bredden og højden skal være i pixels
         standardSheep = Bitmap.createScaledBitmap(standardSheep, width/3, height/3, true);
 
-        canvas.drawBitmap(standardSheep, sheepPosX, height/2, null);
+        canvas.drawBitmap(standardSheep, sheepPosX, sheepPosY, null);
 
 
 
@@ -95,6 +96,7 @@ public class CanvasView extends View {
                 }
 
                 sheepPosX -= width/300;
+                sheepPosY = sheepPosX;
                 postInvalidate();
             }
 
