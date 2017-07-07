@@ -37,4 +37,16 @@
         android:layout_marginBottom="61dp"
         android:onClick="skinselector"
         android:text="Skin selector" />
+
+    <TextView
+        android:id="@+id/highscoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/skinselector"
+        android:layout_alignLeft="@+id/skinselector"
+        android:layout_alignStart="@+id/skinselector"
+        android:layout_marginBottom="54dp"
+        android:text="0"
+        android:visibility="visible"
+        android:textSize="25dp"/>
 </RelativeLayout>

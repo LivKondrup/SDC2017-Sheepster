@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
     public int count=0;
     public int count2;
-    public String highscore;
+    public String highscore="0";
     public int life;
+    public TextView highScoreTextView;
 
     CanvasView cv;
     CanvasView cv2;
@@ -22,8 +24,13 @@ public class MainActivity extends Activity {
 
         //cv = (CanvasView) findViewById(R.id.canvasView);
 
-        Intent hiscoreIntent = getIntent();
-        highscore = hiscoreIntent.getStringExtra("Highscore");
+        Intent hiscoreIntentString = getIntent();
+        highscore = hiscoreIntentString.getStringExtra("Highscore");
+        highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
+        highScoreTextView.setText(highscore);
+
+
+
     }
 
     //Knappen kalder denne metode, som kalder metoden i CanvasView. I kan ikke få knapper til direkte at kalde metoder i jeres View
@@ -49,4 +56,7 @@ public class MainActivity extends Activity {
         Intent skinselectorIntent = new Intent (this, skinSelectorActivity.class);
         startActivity(skinselectorIntent);
     }
+
+
+
 }

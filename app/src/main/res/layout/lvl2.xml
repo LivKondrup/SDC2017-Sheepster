@@ -92,5 +92,24 @@
         android:layout_above="@+id/backButton2"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:id="@+id/gameOverTestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/countlvl2"
+        android:layout_toEndOf="@+id/fence2"
+        android:layout_toRightOf="@+id/fence2"
+        android:onClick="hiscoreToMain"
+        android:text="Gameover" />
+
+    <TextView
+        android:id="@+id/highscoreLvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fence2"
+        android:layout_centerHorizontal="true"
+        android:text="0"
+        android:visibility="visible" />
+
 
 </RelativeLayout>
