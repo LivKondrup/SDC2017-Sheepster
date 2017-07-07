@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="15dp"
         android:layout_marginLeft="39dp"
         android:layout_marginStart="39dp"
         android:onClick="backButton"
@@ -55,5 +55,15 @@
         android:layout_toEndOf="@+id/countlvl1"
         android:layout_marginLeft="47dp"
         android:layout_marginStart="47dp" />
+
+    <ImageView
+        android:id="@+id/fence"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/fence"
+        android:visibility="visible"
+        app:srcCompat="@drawable/fence"
+        android:layout_above="@+id/backButton"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
