@@ -4,7 +4,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <software.unf.dk.sheepster.CanvasView
-        android:id="@+id/canvasView2"
+        android:id="@+id/lvl2Sheep"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
