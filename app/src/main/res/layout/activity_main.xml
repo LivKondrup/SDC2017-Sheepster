@@ -6,47 +6,77 @@
     android:layout_height="match_parent"
     tools:context="software.unf.dk.sheepster.MainActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/level1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/woodbutton"
         android:onClick="tolvl1"
-        android:text="Level 1" />
+        android:text="Level 1"
+        android:layout_marginBottom="88dp"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_centerHorizontal="true" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/level1"
-        android:layout_alignRight="@+id/level1"
-        android:layout_alignTop="@+id/level1"
-        android:layout_marginTop="74dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/woodbutton"
         android:onClick="tolvl2"
-        android:text="Level 2" />
-
-    <Button
-        android:id="@+id/skinselector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/level1"
+        android:text="Level 2"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/level1"
-        android:layout_alignStart="@+id/level1"
-        android:layout_marginBottom="61dp"
+        android:layout_alignStart="@+id/level1" />
+
+    <ImageButton
+        android:id="@+id/skinselector"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/woodbutton"
         android:onClick="skinselector"
-        android:text="Skin selector" />
+        android:text="Skin selector"
+        android:layout_marginTop="68dp"
+        android:layout_below="@+id/highscoreTextView"
+        android:layout_alignLeft="@+id/level1"
+        android:layout_alignStart="@+id/level1" />
 
     <TextView
         android:id="@+id/highscoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/skinselector"
-        android:layout_alignLeft="@+id/skinselector"
-        android:layout_alignStart="@+id/skinselector"
-        android:layout_marginBottom="54dp"
-        android:text="0"
+        android:layout_marginTop="27dp"
+        android:text="Highscore : 0"
+        android:textSize="25dp"
         android:visibility="visible"
-        android:textSize="25dp"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/lvl2ButtonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:text="Level 2"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/lvl1ButtonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lvl2ButtonTextView"
+        android:layout_alignRight="@+id/lvl2ButtonTextView"
+        android:layout_alignTop="@+id/level1"
+        android:text="Level 1"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/skinSelectorActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skins"
+        android:textSize="25dp"
+        android:layout_alignTop="@+id/skinselector"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
