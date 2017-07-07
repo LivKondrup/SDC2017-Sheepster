@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <software.unf.dk.sheepster.CanvasView
+        android:id="@+id/canvasView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/countlvl2"
@@ -22,23 +32,65 @@
         android:layout_toStartOf="@+id/countlvl2"
         android:text="Sheeps" />
 
-    <Button
+    <ImageButton
         android:id="@+id/backButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="44dp"
         android:layout_marginLeft="39dp"
         android:layout_marginStart="39dp"
+        android:background="@drawable/woodbutton"
         android:onClick="backButton2"
         android:text="Back" />
 
-    <Button
+    <ImageButton
         android:id="@+id/clickSheep2"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/woodbutton"
+        android:onClick="sheepCountButton2"
+        android:text="Sheep"
+        android:layout_alignTop="@+id/backButton2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp" />
+
+    <TextView
+        android:id="@+id/backTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="sheepCountButton2"
-        android:text="Sheep" />
+        android:layout_alignTop="@+id/backButton2"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
+        android:text="Back"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/sheepTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/clickSheep2"
+        android:layout_alignRight="@+id/clickSheep2"
+        android:layout_alignTop="@+id/clickSheep2"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:text="Sheep"
+        android:textSize="25dp"/>
+
+    <ImageView
+        android:id="@+id/fence2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/fence"
+        android:visibility="visible"
+        app:srcCompat="@drawable/fence"
+        android:layout_above="@+id/backButton2"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
