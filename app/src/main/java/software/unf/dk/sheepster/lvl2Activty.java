@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
 
 public class lvl2Activty extends MainActivity {
 
@@ -11,6 +12,8 @@ public class lvl2Activty extends MainActivity {
     private CanvasView lvl2Sheep;
     private ImageView fence2;
     private int count3;
+    public String count4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,7 @@ public class lvl2Activty extends MainActivity {
 
     public void sheepCountButton2 (View view){
         count3++;
-        String count4 = "" + count3;
+        count4 = "" + count3;
         clickCount2.setText(count4);
         lvl2Sheep.animation();
     }
@@ -33,5 +36,14 @@ public class lvl2Activty extends MainActivity {
     public void backButton2(View view) {
         finish();
     }
+
+    // Highscore + Gameover + return to mainActivity
+    public void hiscoreToMain (){
+            Intent hiscoreIntent = new Intent(this, MainActivity.class);
+            hiscoreIntent.putExtra("Highscore", count4);
+            startActivity(hiscoreIntent);
+    }
+
+
 
 }

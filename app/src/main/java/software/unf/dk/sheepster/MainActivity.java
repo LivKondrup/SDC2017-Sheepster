@@ -9,7 +9,7 @@ import android.view.View;
 public class MainActivity extends Activity {
     public int count=0;
     public int count2;
-    public int highscore=0;
+    public String highscore;
     public int life;
 
     CanvasView cv;
@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
 
         //cv = (CanvasView) findViewById(R.id.canvasView);
 
+        Intent hiscoreIntent = getIntent();
+        highscore = hiscoreIntent.getStringExtra("Highscore");
     }
 
     //Knappen kalder denne metode, som kalder metoden i CanvasView. I kan ikke få knapper til direkte at kalde metoder i jeres View
