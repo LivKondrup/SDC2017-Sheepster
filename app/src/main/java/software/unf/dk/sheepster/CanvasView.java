@@ -20,8 +20,10 @@ public class CanvasView extends View {
 
     //Feltvariabler
     Bitmap standardSheep;
-    int sheepPosX, height, width, sleepTime, sheepPosY;
+    int sleepTime, velocity;
     boolean sheepPosNotSet;
+    double angle;
+    private float sheepPosX, sheepPosY, height, width;
     Paint sky;
 
 
@@ -44,6 +46,8 @@ public class CanvasView extends View {
         //Constructor
         standardSheep = BitmapFactory.decodeResource(this.getResources(),R.drawable.sheepstandard);
         sheepPosNotSet = true;
+        angle = 1.3;
+        velocity = 150;
 
         //Sæt paint. Altså farver (og tekststørrelse) som bruges til at tegne
         sky = new Paint();
@@ -54,7 +58,7 @@ public class CanvasView extends View {
     }
 
     public void animation(){
-        sleepTime = 10;
+        sleepTime = 20;
         Timer animate = new Timer();
         sheepPosNotSet = true;
         postInvalidate();
@@ -67,7 +71,7 @@ public class CanvasView extends View {
         height = canvas.getHeight();
         width = canvas.getWidth();
         if(sheepPosNotSet){
-            sheepPosX = width;
+            sheepPosX = width/2;
             sheepPosY = height/2;
             sheepPosNotSet = false;
         }
@@ -78,12 +82,17 @@ public class CanvasView extends View {
 
             //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
         //Bredden og højden skal være i pixels
-        standardSheep = Bitmap.createScaledBitmap(standardSheep, width/3, height/3, true);
+        standardSheep = Bitmap.createScaledBitmap(standardSheep, (int) width/3, (int) height/3, true);
         canvas.drawBitmap(standardSheep, sheepPosX, sheepPosY, null);
 
 
 
     }
+
+    //public void calSheepPos(double time, double angle, int velocity){
+    //    sheepPosX = width/2 - (float)(velocity* Math.cos(angle)*time);
+    //    sheepPosY = height/2 - (float)((0-0.01)*time*time+velocity*Math.sin(angle));
+    //}
 
     public class Timer extends Thread {
         @Override
@@ -98,7 +107,7 @@ public class CanvasView extends View {
 
 
                 sheepPosX -= width/300;
-                sheepPosY = 1*(sheepPosX*sheepPosX)+sheepPosX+height/2;
+                sheepPosY = height/2 + 1/50*(sheepPosX*sheepPosX)-sheepPosX;
                 postInvalidate();
             }
 
