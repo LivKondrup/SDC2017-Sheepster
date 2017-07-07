@@ -17,7 +17,7 @@ public class CanvasView extends View {
 
     //Feltvariabler
     Bitmap standardSheep;
-    int sheepPosX, height, width;
+    int sheepPosX, height, width, sleepTime;
     boolean sheepPosNotSet;
     //Paint text, sky;
 
@@ -44,6 +44,7 @@ public class CanvasView extends View {
     }
 
     public void animation(){
+        sleepTime = 10;
         Timer animate = new Timer();
         sheepPosNotSet = true;
         postInvalidate();
@@ -63,7 +64,7 @@ public class CanvasView extends View {
 
             //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
         //Bredden og højden skal være i pixels
-        standardSheep = Bitmap.createScaledBitmap(standardSheep, width/10, height/10, true);
+        standardSheep = Bitmap.createScaledBitmap(standardSheep, width/3, height/3, true);
 
         canvas.drawBitmap(standardSheep, sheepPosX, height/4, null);
 
@@ -75,14 +76,14 @@ public class CanvasView extends View {
         @Override
         public void run() {
 
-            while(sheepPosX > 0){
+            while(sheepPosX > -width/3){
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(sleepTime);
                 } catch (InterruptedException e) {
                     //Nothing
                 }
 
-                sheepPosX -= width/100;
+                sheepPosX -= width/300;
                 postInvalidate();
             }
 
