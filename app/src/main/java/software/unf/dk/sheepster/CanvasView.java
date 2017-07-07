@@ -106,7 +106,7 @@ public class CanvasView extends View {
                 }
 
                 sheepPosX -= width/300;
-                sheepPosY = (((-3 * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
+                sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
                 postInvalidate();
             }
 
