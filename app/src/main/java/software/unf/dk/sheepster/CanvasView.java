@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -19,7 +21,7 @@ public class CanvasView extends View {
     Bitmap standardSheep;
     int sheepPosX, height, width, sleepTime;
     boolean sheepPosNotSet;
-    //Paint text, sky;
+    Paint sky;
 
 
     public CanvasView(Context context) {
@@ -41,6 +43,12 @@ public class CanvasView extends View {
         //Constructor
         standardSheep = BitmapFactory.decodeResource(this.getResources(),R.drawable.sheepstandard);
         sheepPosNotSet = true;
+
+        //Sæt paint. Altså farver (og tekststørrelse) som bruges til at tegne
+        sky = new Paint();
+        sky.setARGB(255,115,195,62);
+        //Kan også bruge variabelNavn.setARGB(). A er gennemsigtigheden, R er rød, G er grøn og B er blå.
+        //Brug den til at lave mere præcise farver.
     }
 
     public void animation(){
@@ -60,13 +68,16 @@ public class CanvasView extends View {
             sheepPosX = width;
             sheepPosNotSet = false;
         }
+        //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
+        //Der skulle også stå nogenlunde gennemskueligt hvad parametrene skal være
+        canvas.drawRect(0, 0, width, height, sky);
 
 
             //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
         //Bredden og højden skal være i pixels
         standardSheep = Bitmap.createScaledBitmap(standardSheep, width/3, height/3, true);
 
-        canvas.drawBitmap(standardSheep, sheepPosX, height/4, null);
+        canvas.drawBitmap(standardSheep, sheepPosX, height/2, null);
 
 
 
