@@ -18,7 +18,6 @@ public class lvl1Activity extends MainActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,26 +41,38 @@ public class lvl1Activity extends MainActivity {
 
 
 
-                if (bcount==true) {
+                /*while (bcount==true) {
                     if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
                         count++;
-                        String count2 = "" + count;
-                        clickCount.setText(count2);
+                     String count2 = "" + count;
+                     clickCount.setText(count2);
                         bcount = false;
                     }
 
 
                 }
+                while(bcount==false) {  Dette while loop forårsager et crash.
+                    if ((sheepPosX > 0 && sheepPosX < width/3) || (sheepPosX > width-(width/3) && sheepPosX < width )) { Vi formoder det har noget at gøre med intervallet på denne linje.
+                        bcount = true;
+                    }
+                }
+                */
+              //  while (sheepPosX <= 0){
+               //     bcount = true;
+                   // boolean flerePoint = lvl1Sheep.getFlerePoint();
+                  //  bcount = flerePoint;
+
+               // }
+
                 return false;
+
+
             }
 
 
         });
-        boolean flerePoint = lvl1Sheep.getFlerePoint();
+
         lvl1Sheep.animation();
-        bcount=flerePoint;
-
-
 
     }
 
