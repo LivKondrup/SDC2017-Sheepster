@@ -35,6 +35,7 @@ public class CanvasView extends View {
     public int count=0;
     private TextView clickCount;
     public String text = "0";
+    boolean playing;
 
 
     public CanvasView(Context context) {
@@ -66,11 +67,13 @@ public class CanvasView extends View {
     }
 
     public void animation() {
+        playing = true;
         sleepTime = 20;
         Timer animate = new Timer();
         sheepPosNotSet = true;
         postInvalidate();
         animate.start();
+
     }
 
     @Override
@@ -137,36 +140,9 @@ public class CanvasView extends View {
 
     }
 
-
- /*   @Override
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-
-        count++;
-        text = "" + count;
-
-
-        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-            count++;
-          //  text = "" + count;
-           // clickCount.setText(text);
-            text = "" + count;
-            while(sheepPosX > (width/3)) {
-
-
-                if (Y > sheepPosY && Y < sheepPosY + (height / 3) && X > sheepPosX && X < sheepPosX + (width / 3)) {
-                    count++;
-                    text = "" + count;
-                    clickCount.setText(text);
-                    text = "" + count;
-                }
-            }
-
-
-        }
-        //down, move, up
-        postInvalidate();
-        return true;
-    }*/
+    public void setPlaying(boolean playing) {
+        this.playing = playing;
+    }
 
 
     //public void calSheepPos(double time, double angle, int velocity){
@@ -177,30 +153,34 @@ public class CanvasView extends View {
     public class Timer extends Thread {
         @Override
         public void run() {
+            while(playing) {
+                while (sheepPosX > -width / 3) {
+                    try {
+                        Thread.sleep(sleepTime);
+                    } catch (InterruptedException e) {
+                        //Nothing
+                    }
+                    if (sheepPosX > 2 * width / 3) {
+                        sheepPosX -= width / 300;
+                    } else if (sheepPosX < 2 * width / 3) {
+                        sheepPosX -= width / 300;
+                        sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
 
-            while (sheepPosX > -width / 3) {
-                try {
-                    Thread.sleep(sleepTime);
-                } catch (InterruptedException e) {
-                    //Nothing
+                    }
+                    //else if (sheepPosY > (height-(height/5)*3)+1){
+                    //  sheepPosX -= width/300;
+                    //}else if (sheepPosX < width/3){
+                    //  sheepPosX -= width/300;
+
+                    // }
+
+
+                    postInvalidate();
+
+
                 }
-                if (sheepPosX > 2 * width / 3) {
-                    sheepPosX -= width / 300;
-                } else if (sheepPosX < 2 * width / 3) {
-                    sheepPosX -= width / 300;
-                    sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
 
-                }
-                //else if (sheepPosY > (height-(height/5)*3)+1){
-                //  sheepPosX -= width/300;
-                //}else if (sheepPosX < width/3){
-                //  sheepPosX -= width/300;
-                // }
-
-
-                postInvalidate();
-
-
+                sheepPosNotSet = true;
             }
 
 

@@ -16,6 +16,7 @@ public class lvl1Activity extends MainActivity {
     private Paint sky;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,7 @@ public class lvl1Activity extends MainActivity {
         fence = (ImageView) findViewById(R.id.fence);
         sky = new Paint();
         sky.setARGB(255, 115, 195, 62);
+
 
 
         lvl1Sheep.setOnTouchListener(new View.OnTouchListener() {
@@ -45,42 +47,44 @@ public class lvl1Activity extends MainActivity {
                         count++;
                         String count2 = "" + count;
                         clickCount.setText(count2);
-                        bcount = false;
+
 
                     }
+                    bcount = false;
                 }
-             //   if (bcount = false)
-
-
-                if(sheepPosX < -(width-width/3)){
-                    lvl1Sheep.animation();
-                    bcount = true;
+                if (bcount == false){
 
                 }
-
-
                 return false;
             }
 
+
         });
-
-    }
-
-    public void setCount(int count1){
-        count = count1;
-    }
-
-    public void backButton(View view) {
-        finish();
-    }
-
-    public void sheepCountButton (View view){
-
 
         lvl1Sheep.animation();
 
 
+    }
+
+  /*  public void restartSheep(){
 
     }
+if(sheepPosX < 0){
+        lvl1Sheep.animation();
+    }*/
+
+
+  //  public void setCount(int count1){
+ //       count = count1;
+ //   }
+
+    public void backButton(View view) {
+        lvl1Sheep.setPlaying(false);
+        finish();
+    }
+
+
+
+
 }
 
