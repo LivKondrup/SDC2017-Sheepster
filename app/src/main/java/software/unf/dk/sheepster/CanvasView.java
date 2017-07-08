@@ -23,7 +23,7 @@ import android.widget.TextView;
  * Created by deltager on 06-07-17.
  */
 
-public class CanvasView extends View implements View.OnTouchListener {
+public class CanvasView extends View {
 
     //Feltvariabler
     Bitmap standardSheep;
@@ -56,8 +56,6 @@ public class CanvasView extends View implements View.OnTouchListener {
         //Constructor
         standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.sheepstandard);
         sheepPosNotSet = true;
-        angle = 1.3;
-        velocity = 150;
         //Sæt paint. Altså farver (og tekststørrelse) som bruges til at tegne
 
         textColor= new Paint();
@@ -89,17 +87,17 @@ public class CanvasView extends View implements View.OnTouchListener {
 
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setTextSize(width/5);
+        paint.setTextSize(width/10);
 
 
 
 
 
-        float rectX = width/3;    //position
-        float rectY = height/6;
+     //   float rectX = width/3;    //position
+        float rectY = height/5;
         float rectWidth = width/2.05f;
-        int rectHeight = 20;
-        float textWidth = paint.measureText(text);
+      //  int rectHeight = 20;
+      //  float textWidth = paint.measureText(text);
 
 
 
@@ -110,7 +108,7 @@ public class CanvasView extends View implements View.OnTouchListener {
         //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
         //Der skulle også stå nogenlunde gennemskueligt hvad parametrene skal være
         // canvas.drawRect(0, 0, width, height, sky);
-         canvas.drawText(text, width/2, rectY, textColor);
+
 
 
         //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
@@ -122,21 +120,35 @@ public class CanvasView extends View implements View.OnTouchListener {
     }
 
 
-    @Override
+ /*   @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
-        float Y = motionEvent.getY();
-        float X = motionEvent.getX();
+
+        count++;
+        text = "" + count;
+
+
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+            count++;
+          //  text = "" + count;
+           // clickCount.setText(text);
+            text = "" + count;
+            while(sheepPosX > (width/3)) {
 
 
-            if (Y > sheepPosY && Y < sheepPosY + (height / 3) && X > sheepPosX && X < sheepPosX + (width / 3)) {
-                count++;
-                text = "" + count;
-                clickCount.setText(text);
+                if (Y > sheepPosY && Y < sheepPosY + (height / 3) && X > sheepPosX && X < sheepPosX + (width / 3)) {
+                    count++;
+                    text = "" + count;
+                    clickCount.setText(text);
+                    text = "" + count;
+                }
             }
-        } //down, move, up
-        return false;
-    }
+
+
+        }
+        //down, move, up
+        postInvalidate();
+        return true;
+    }*/
 
 
     //public void calSheepPos(double time, double angle, int velocity){
@@ -175,6 +187,14 @@ public class CanvasView extends View implements View.OnTouchListener {
 
 
         }
+    }
+
+    public float getSheepPosX(){
+        return sheepPosX;
+    }
+
+    public  float getSheepPosY(){
+        return sheepPosY;
     }
 }
 

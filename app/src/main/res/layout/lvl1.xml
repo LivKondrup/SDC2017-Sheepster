@@ -78,4 +78,15 @@
         android:layout_alignTop="@+id/backButton"
         android:layout_toLeftOf="@+id/fence"
         android:layout_toStartOf="@+id/fence" />
+
+    <TextView
+        android:id="@+id/clickCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="0" />
 </RelativeLayout>
