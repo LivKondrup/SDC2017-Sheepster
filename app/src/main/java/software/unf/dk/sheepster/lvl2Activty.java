@@ -1,5 +1,7 @@
 package software.unf.dk.sheepster;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -14,25 +16,18 @@ public class lvl2Activty extends MainActivity {
     private ImageView fence2;
     private int count3;
     public String count4;
+    public String count5;
     private int i=0;
-    private int highscoreInt2;
-    public static final String highscoreGemt = "highscoreGemt";
+    private int highscoreGemt1;
+    public static String highscoreGemt = "highscoreGemt";
     private TextView highscoreLvl2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Hente gemt highscore
-        /*SharedPreferences settings = getApplicationContext().getSharedPreferences(highscoreGemt, 0);
-        int highscoreInt3 = settings.getInt("highscoreGemt", 0);
-        highscoreInt2=highscoreInt3;
-        */
-
-       /* SharedPreferences prefs = getSharedPreferences(highscoreGemt, MODE_PRIVATE);
-        String restoredText = prefs.getString("", null);
-        if (restoredText != null) {
-            int highscoreGemt1 = prefs.getInt("highscoreGemt", 0); //0 is the default value.
-        }*/
+        SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
+        highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
 
         setContentView(R.layout.lvl2);
         clickCount2 = findViewById(R.id.countlvl2);
@@ -40,6 +35,7 @@ public class lvl2Activty extends MainActivity {
         lvl2Sheep = (CanvasView) findViewById(R.id.lvl2Sheep);
         fence2 = (ImageView) findViewById(R.id.fence2);
 
+        String highscoreGemt = "" + highscoreGemt1;
 
         highscoreLvl2 = (TextView) findViewById(R.id.highscoreLvl2);
         highscoreLvl2.setText(highscoreGemt);
@@ -59,20 +55,24 @@ public class lvl2Activty extends MainActivity {
     // Highscore + Gameover + return to mainActivity
     public void hiscoreToMain(View view){
         Intent hiscoreIntentString = new Intent(this, MainActivity.class);
-            if (count3>highscoreInt2) {
-                highscoreInt2=count3;
-                hiscoreIntentString.putExtra("Highscore", count4);
+        SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
+        highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
+            if (count3>highscoreGemt1) {
+                highscoreGemt1 = count3;
+                count5 = "" + highscoreGemt1;
+                hiscoreIntentString.putExtra("Highscore", count5);
+            } else {
+            highscoreGemt = "" + highscoreGemt1;
+            hiscoreIntentString.putExtra("Highscore", highscoreGemt);
             }
+
             //Sende highscore
-            /*SharedPreferences settings = getApplicationContext().getSharedPreferences(highscoreGemt, 0);
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putInt("HighscoreGemt", highscoreInt2);
-            editor.apply();*/
+            SharedPreferences sp = getSharedPreferences("prefs", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("HighscoreGemt", highscoreGemt1);
+            editor.commit();
 
-
-        startActivity(hiscoreIntentString);
+            //Skif Activity til MainActivity
+            startActivity(hiscoreIntentString);
     }
-
-
-
 }

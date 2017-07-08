@@ -18,19 +18,11 @@ public class lvl1Activity extends MainActivity {
         clickCount = findViewById(R.id.countlvl1);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
-
-        // Gemmer klik, virker ikke
-        //count = count2;
-        //String count2 = "" + count;
-        //clickCount.setText(count2);
-
     }
 
     public void backButton(View view) {
         finish();
     }
-
-
 
     public void sheepCountButton (View view){
         count++;
@@ -39,13 +31,5 @@ public class lvl1Activity extends MainActivity {
         lvl1Sheep.animation();
 
     }
-
-// Gemmer klik, virker ikke.
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        count2 = count;
-//
-//    }
 }
 
