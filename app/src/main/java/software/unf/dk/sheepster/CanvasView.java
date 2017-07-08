@@ -27,7 +27,7 @@ import android.widget.TextView;
 public class CanvasView extends View {
 
     //Feltvariabler
-    Bitmap standardSheep, skyBackground, grassBackground;
+    Bitmap standardSheep, lifeOne, lifeTwo, lifeThree;
     int sleepTime, velocity;
     boolean sheepPosNotSet;
     double angle;
@@ -58,12 +58,20 @@ public class CanvasView extends View {
         //Constructor
         standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.sheepstandard);
         sheepPosNotSet = true;
-        //Sæt paint. Altså farver (og tekststørrelse) som bruges til at tegne
 
+        //Creating Bitmaps for Lives (ImageViews)
+        lifeOne = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
+        lifeTwo = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
+        lifeThree = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
+
+
+
+        //Sæt paint. Altså farver (og tekststørrelse) som bruges til at tegne
         textColor= new Paint();
         textColor.setARGB(255, 0, 0, 0);
         //Kan også bruge variabelNavn.setARGB(). A er gennemsigtigheden, R er rød, G er grøn og B er blå.
         //Brug den til at lave mere præcise farver.
+
         postInvalidate();
     }
 

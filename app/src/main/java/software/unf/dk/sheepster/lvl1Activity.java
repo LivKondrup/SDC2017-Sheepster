@@ -1,6 +1,8 @@
 package software.unf.dk.sheepster;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -16,6 +18,7 @@ public class lvl1Activity extends MainActivity {
     private Paint sky;
     public boolean bcount = true;
 
+    //Bitmap darthSheep;
 
 
 
@@ -30,6 +33,9 @@ public class lvl1Activity extends MainActivity {
 
 
 
+
+
+
         lvl1Sheep.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -39,10 +45,9 @@ public class lvl1Activity extends MainActivity {
                 float width = view.getWidth();
                 float X = motionEvent.getX();
                 float Y = motionEvent.getY();
+                boolean bcount = true;
 
-
-
-                if (bcount==true) {
+                if (bcount) {
                     if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
                         count++;
                         String count2 = "" + count;

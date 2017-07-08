@@ -3,6 +3,8 @@ package software.unf.dk.sheepster;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,17 +19,26 @@ public class lvl2Activty extends MainActivity {
     private int count3;
     public String count4;
     public String count5;
-    private int i=0;
+    private int antalLiv=3;
     private int highscoreGemt1;
     public static String highscoreGemt = "highscoreGemt";
     private TextView highscoreLvl2;
-
+    Bitmap lost1life;
+    Bitmap lost2Life;
+    private  ImageView thirdLife;
+    private  ImageView secondLife;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl2);
+
+        /*thirdLife = (ImageView) findViewById(R.id.firsLifeImageView);
+        thirdLife = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
+
+        secondLife = (ImageView) findViewById(R.id.secondLifeImageView);
+        highscoreLvl2.setText(highscoreGemt);*/
 
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
@@ -50,6 +61,22 @@ public class lvl2Activty extends MainActivity {
         clickCount2.setText(count4);
         lvl2Sheep.animation();
     }
+
+    /*public void looseOneLife(View view){
+
+        if (antalLiv == 3){
+            lost1life = BitmapFactory.decodeResource(this.getResources(), R.drawable.notlife);
+
+            lost1life.setImageBitmap(lost1life);
+        } else if (antalLiv == 2){
+            darthSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.darthsheep);
+
+            fence.setImageBitmap(darthSheep);
+        } else {
+            hiscoreToMain(View view);
+        }
+
+    }*/
 
     public void backButton2(View view) {
         finish();
