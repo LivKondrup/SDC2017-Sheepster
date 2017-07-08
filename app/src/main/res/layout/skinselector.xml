@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/backButton2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,15 +10,15 @@
         android:id="@+id/button3"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/woodbutton"
-        android:onClick="backButton3"
-        android:text="Back"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:background="@drawable/woodbutton"
+        android:onClick="backButton3"
+        android:text="Back" />
 
     <TextView
         android:id="@+id/backButtonTextviewSkinSelector"
@@ -29,7 +30,7 @@
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
         android:text="Back"
-        android:textSize="25dp"/>
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/skinSelectorHighscoreTextView"
@@ -39,5 +40,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
         android:text="Highscore:"
-        android:textSize="25dp"/>
+        android:textSize="25dp" />
+
 </RelativeLayout>

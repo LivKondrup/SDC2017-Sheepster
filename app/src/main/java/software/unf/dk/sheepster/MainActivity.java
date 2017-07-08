@@ -3,10 +3,12 @@ package software.unf.dk.sheepster;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -27,9 +29,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        sky = new Paint();
-        sky.setARGB(255,115,195,62);
 
         /*Intent hiscoreIntentString = getIntent();
         highscore = hiscoreIntentString.getStringExtra("Highscore");

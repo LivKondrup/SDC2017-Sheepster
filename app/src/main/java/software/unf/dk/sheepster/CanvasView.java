@@ -26,7 +26,7 @@ import android.widget.TextView;
 public class CanvasView extends View {
 
     //Feltvariabler
-    Bitmap standardSheep;
+    Bitmap standardSheep, skyBackground, grassBackground;
     int sleepTime, velocity;
     boolean sheepPosNotSet;
     double angle;
@@ -78,7 +78,19 @@ public class CanvasView extends View {
         //Få fat i højden og bredde af jeres View. I pixels
         height = canvas.getHeight();
         width = canvas.getWidth();
+
+        //Funktion to make blue background, MANGLER AT GØRE TIL REKTANGLER
+            Paint sky;
+            sky= new Paint();
+            sky.setARGB(255, 51, 181, 241);
+
+        //Funktion to make green background, MANGLER AT GØRE TIL REKTANGLER
+            Paint grass;
+            grass= new Paint();
+            grass.setARGB(255, 115, 195, 62);
+
         if (sheepPosNotSet) {
+            standardSheep = Bitmap.createScaledBitmap(standardSheep, (int) (width / 3)+1, (int) (height / 3)+1, true);
             sheepPosX = width;
             sheepPosY = height - (height / 5) * 3;
             sheepPosNotSet = false;
@@ -113,7 +125,7 @@ public class CanvasView extends View {
 
         //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
         //Bredden og højden skal være i pixels
-        standardSheep = Bitmap.createScaledBitmap(standardSheep, (int) width / 3, (int) height / 3, true);
+
         canvas.drawBitmap(standardSheep, sheepPosX, sheepPosY, null);
 
 
