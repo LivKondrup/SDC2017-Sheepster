@@ -1,18 +1,22 @@
 package software.unf.dk.sheepster;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends Activity {
     public int count=0;
     public int count2;
     public String highscore="0";
     public int life;
-    public TextView highScoreTextView;
+    private TextView highScoreTextView;
+    private int highscoreGemt1;
 
     CanvasView cv;
     CanvasView cv2;
@@ -21,10 +25,20 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent hiscoreIntentString = getIntent();
+
+        /*Intent hiscoreIntentString = getIntent();
         highscore = hiscoreIntentString.getStringExtra("Highscore");
         highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
-        highScoreTextView.setText(highscore);
+        highScoreTextView.setText(highscore);*/
+
+        //Hente gemt highscore
+        SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
+        highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
+
+        //Opdater TextView
+        highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
+        highScoreTextView.setText("" + highscoreGemt1);
+
     }
 
     //Knappen kalder denne metode, som kalder metoden i CanvasView. I kan ikke få knapper til direkte at kalde metoder i jeres View

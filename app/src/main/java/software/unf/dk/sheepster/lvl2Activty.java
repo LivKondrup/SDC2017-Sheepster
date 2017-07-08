@@ -52,6 +52,7 @@ public class lvl2Activty extends MainActivity {
         finish();
     }
 
+
     // Highscore + Gameover + return to mainActivity
     public void hiscoreToMain(View view){
         Intent hiscoreIntentString = new Intent(this, MainActivity.class);
