@@ -93,15 +93,17 @@ public class lvl2Activty extends MainActivity {
 
         });
 
-        lvl2Sheep.animation(true);
+        lvl2Sheep.animation(true,100);
         new TjecAlive().start();
     }
+
 
     public void sheepCountButton2 (View view){
         count3++;
         count4 = "" + count3;
         clickCount2.setText(count4);
-        lvl2Sheep.animation(true);
+        //Skal efterfølgende linje være der.
+        lvl2Sheep.animation(true,100);
     }
 
     /*public void looseOneLife(View view){

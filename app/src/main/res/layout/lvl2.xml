@@ -114,15 +114,5 @@
         android:layout_toLeftOf="@+id/clickSheep2"
         android:layout_toStartOf="@+id/clickSheep2" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/fence2"
-        android:layout_marginTop="68dp"
-        android:text=" Restart Highscore" />
-
 
 </RelativeLayout>

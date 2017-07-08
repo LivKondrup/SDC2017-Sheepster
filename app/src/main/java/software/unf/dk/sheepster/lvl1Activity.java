@@ -69,7 +69,7 @@ public class lvl1Activity extends MainActivity {
 
         });
 
-        lvl1Sheep.animation(false);
+        lvl1Sheep.animation(false,300);
 
     }
 

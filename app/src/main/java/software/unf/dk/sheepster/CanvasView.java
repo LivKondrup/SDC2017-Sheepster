@@ -28,7 +28,7 @@ public class CanvasView extends View {
 
     //Feltvariabler
     Bitmap standardSheep, lifeOne, lifeTwo, lifeThree, notlifeOne, notlifeTwo, notlifeThree;
-    int sleepTime;
+    int sleepTime,widthDivideretSlut;
     boolean sheepPosNotSet, alive, lvl2;
     double angle;
     private float sheepPosX, sheepPosY, height, width;
@@ -74,8 +74,9 @@ public class CanvasView extends View {
     }
 
 
-    public void animation(boolean lvl) {
+    public void animation(boolean lvl,int widthDivideret) {
         flerePoint = true;
+        widthDivideretSlut = widthDivideret;
         health = 3;
         alive = true;
         lvl2=lvl;
@@ -182,9 +183,9 @@ public class CanvasView extends View {
                         //Nothing
                     }
                     if (sheepPosX > 2 * width / 3) {
-                        sheepPosX -= width / 300;
+                        sheepPosX -= width / widthDivideretSlut;
                     } else if (sheepPosX < 2 * width / 3) {
-                        sheepPosX -= width / 300;
+                        sheepPosX -= width / widthDivideretSlut;
                         sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
 
                     }
