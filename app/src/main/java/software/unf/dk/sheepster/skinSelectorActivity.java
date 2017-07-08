@@ -22,7 +22,7 @@ public class skinSelectorActivity extends Activity {
 
         //Opdater TextView
         highscoreTextview = (TextView) findViewById(R.id.skinSelectorHighscoreTextView);
-        highscoreTextview.setText("" + highscoreGemt1);
+        highscoreTextview.setText("Highscore: " + highscoreGemt1);
 
 
     }

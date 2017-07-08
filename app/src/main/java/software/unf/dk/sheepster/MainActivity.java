@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 
         //Opdater TextView
         highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
-        highScoreTextView.setText("" + highscoreGemt1);
+        highScoreTextView.setText("Highscore: " + highscoreGemt1);
 
     }
 
