@@ -1,5 +1,6 @@
 package software.unf.dk.sheepster;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,9 +16,13 @@ public class lvl1Activity extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl1);
-        clickCount = findViewById(R.id.countlvl1);
+      //  clickCount = findViewById(R.id.countlvl1);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
+    }
+
+    public void setCount(int count1){
+        count = count1;
     }
 
     public void backButton(View view) {
@@ -25,10 +30,12 @@ public class lvl1Activity extends MainActivity {
     }
 
     public void sheepCountButton (View view){
-        count++;
-        String count2 = "" + count;
-        clickCount.setText(count2);
+       // count++;
+      //  String count2 = "" + count;
+      //  clickCount.setText(count2);
         lvl1Sheep.animation();
+
+
 
     }
 }

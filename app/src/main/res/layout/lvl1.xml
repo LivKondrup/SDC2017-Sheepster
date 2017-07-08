@@ -13,50 +13,37 @@
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/countlvl1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
-        android:text="0" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/countlvl1"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_toLeftOf="@+id/countlvl1"
-        android:layout_toStartOf="@+id/countlvl1"
-        android:text="Sheeps" />
+        android:text="Sheeps"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp" />
 
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="19dp"
         android:background="@drawable/woodbutton"
         android:onClick="backButton"
         android:text="Back"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="28dp" />
 
     <ImageButton
         android:id="@+id/clickSheep"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/backButton"
-        android:layout_alignBottom="@+id/backButton"
-        android:layout_marginLeft="47dp"
-        android:layout_marginStart="47dp"
-        android:layout_toEndOf="@+id/countlvl1"
-        android:layout_toRightOf="@+id/countlvl1"
         android:background="@drawable/woodbutton"
         android:onClick="sheepCountButton"
-        android:text="Sheep" />
+        android:text="Sheep"
+        android:layout_below="@+id/fence"
+        android:layout_toRightOf="@+id/fence"
+        android:layout_toEndOf="@+id/fence" />
 
     <ImageView
         android:id="@+id/fence"
@@ -74,22 +61,21 @@
         android:layout_height="wrap_content"
         android:text="Sheep"
         android:textSize="25dp"
-        android:layout_below="@+id/fence"
-        android:layout_alignLeft="@+id/clickSheep"
-        android:layout_alignStart="@+id/clickSheep"
         android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp" />
+        android:layout_marginStart="12dp"
+        android:layout_below="@+id/fence"
+        android:layout_toRightOf="@+id/fence"
+        android:layout_toEndOf="@+id/fence" />
 
     <TextView
         android:id="@+id/backTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/clickSheep"
-        android:layout_alignTop="@+id/clickSheep"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:layout_toLeftOf="@+id/fence"
-        android:layout_toStartOf="@+id/fence"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:text="Back"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:layout_alignTop="@+id/backButton"
+        android:layout_toLeftOf="@+id/fence"
+        android:layout_toStartOf="@+id/fence" />
 </RelativeLayout>
