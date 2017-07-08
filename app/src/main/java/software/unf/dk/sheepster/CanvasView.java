@@ -31,7 +31,7 @@ public class CanvasView extends View implements View.OnTouchListener {
     boolean sheepPosNotSet;
     double angle;
     private float sheepPosX, sheepPosY, height, width;
-    Paint sky, textColor;
+    Paint textColor;
     public int count=0;
     private TextView clickCount;
     public String text = "0";
@@ -59,8 +59,7 @@ public class CanvasView extends View implements View.OnTouchListener {
         angle = 1.3;
         velocity = 150;
         //Sæt paint. Altså farver (og tekststørrelse) som bruges til at tegne
-        sky = new Paint();
-        sky.setARGB(255, 115, 195, 62);
+
         textColor= new Paint();
         textColor.setARGB(255, 0, 0, 0);
         //Kan også bruge variabelNavn.setARGB(). A er gennemsigtigheden, R er rød, G er grøn og B er blå.
@@ -90,7 +89,7 @@ public class CanvasView extends View implements View.OnTouchListener {
 
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setTextSize(width/10);
+        paint.setTextSize(width/5);
 
 
 
@@ -110,7 +109,7 @@ public class CanvasView extends View implements View.OnTouchListener {
 
         //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
         //Der skulle også stå nogenlunde gennemskueligt hvad parametrene skal være
-         canvas.drawRect(0, 0, width, height, sky);
+        // canvas.drawRect(0, 0, width, height, sky);
          canvas.drawText(text, width/2, rectY, textColor);
 
 
