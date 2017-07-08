@@ -21,7 +21,6 @@ public class lvl1Activity extends MainActivity {
     //Bitmap darthSheep;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +28,6 @@ public class lvl1Activity extends MainActivity {
         clickCount = findViewById(R.id.clickCount);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
-
-
-
 
 
 
@@ -45,9 +41,10 @@ public class lvl1Activity extends MainActivity {
                 float width = view.getWidth();
                 float X = motionEvent.getX();
                 float Y = motionEvent.getY();
-                boolean bcount = true;
 
-                if (bcount) {
+
+
+                if (bcount==true) {
                     if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
                         count++;
                         String count2 = "" + count;
@@ -62,11 +59,8 @@ public class lvl1Activity extends MainActivity {
 
 
         });
-        boolean flerePoint = lvl1Sheep.getFlerePoint();
+
         lvl1Sheep.animation();
-        bcount=flerePoint;
-
-
 
     }
 

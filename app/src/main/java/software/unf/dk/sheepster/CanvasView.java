@@ -164,9 +164,9 @@ public class CanvasView extends View {
 
 
                 }
-
-                sheepPosNotSet = true;
                 flerePoint = true;
+                sheepPosNotSet = true;
+
             }
 
 
