@@ -28,17 +28,14 @@ public class CanvasView extends View {
 
     //Feltvariabler
     Bitmap standardSheep, lifeOne, lifeTwo, lifeThree, notlifeOne, notlifeTwo, notlifeThree;
-    int sleepTime, velocity;
-    boolean sheepPosNotSet;
+    int sleepTime;
+    boolean sheepPosNotSet, alive, lvl2;
     double angle;
     private float sheepPosX, sheepPosY, height, width;
     Paint textColor;
-    public int count=0;
-    private TextView clickCount;
-    public String text = "0";
     boolean playing;
     boolean flerePoint;
-     public int health = 3;
+     public int health;
 
     public CanvasView(Context context) {
         super(context);
@@ -58,7 +55,6 @@ public class CanvasView extends View {
     public void setup(Context context) {
         //Constructor
         standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.sheepstandard);
-        sheepPosNotSet = true;
 
         //Creating Bitmaps for Lives (ImageViews)
         lifeOne = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
@@ -75,18 +71,20 @@ public class CanvasView extends View {
         textColor.setARGB(255, 0, 0, 0);
         //Kan også bruge variabelNavn.setARGB(). A er gennemsigtigheden, R er rød, G er grøn og B er blå.
         //Brug den til at lave mere præcise farver.
-        postInvalidate();
     }
 
-    public void animation() {
+
+    public void animation(boolean lvl) {
         flerePoint = true;
+        health = 3;
+        alive = true;
+        lvl2=lvl;
         playing = true;
         sleepTime = 20;
         Timer animate = new Timer();
         sheepPosNotSet = true;
         postInvalidate();
         animate.start();
-
     }
 
     @Override
@@ -110,6 +108,7 @@ public class CanvasView extends View {
                 //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
                 //Der skulle også stå nogenlunde gennemskueligt hvad parametrene skal være
                 canvas.drawRect(0, 0, width, (height / 7) * 4, sky);
+        //Tegn hegn
 
 
         if (sheepPosNotSet) {
@@ -118,18 +117,27 @@ public class CanvasView extends View {
             sheepPosY = height - (height / 5) * 3;
             sheepPosNotSet = false;
         }
+        if (lvl2) {
+            if (health == 3) {
+                canvas.drawBitmap(lifeOne, 5, 5, null);
+                canvas.drawBitmap(lifeTwo, 105, 5, null);
+                canvas.drawBitmap(lifeThree, 205, 5, null);
 
-
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setTextSize(width/10);
+            } else if (health == 2) {
+                canvas.drawBitmap(lifeOne, 5, 5, null);
+                canvas.drawBitmap(lifeTwo, 105, 5, null);
+                canvas.drawBitmap(notlifeThree, 205, 5, null);
+            } else {
+                canvas.drawBitmap(lifeOne, 5, 5, null);
+                canvas.drawBitmap(notlifeTwo, 105, 5, null);
+                canvas.drawBitmap(notlifeThree, 205, 5, null);
+            }
+        }
 
 
         float rectY = height/5;
         float rectWidth = width/2.05f;
 
-        paint.setColor(Color.RED);
-        canvas.drawText(text, rectWidth, rectY, paint);
 
 
         //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
@@ -146,6 +154,10 @@ public class CanvasView extends View {
         this.playing = playing;
     }
 
+    public boolean getAlive(){
+        return alive;
+    }
+
     public boolean getFlerePoint(){
         return flerePoint;
     }
@@ -157,6 +169,11 @@ public class CanvasView extends View {
     public class Timer extends Thread {
         @Override
         public void run() {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                //Nothing
+            }
             while(playing) {
                 while (sheepPosX > -width / 3) {
                     try {
@@ -177,21 +194,16 @@ public class CanvasView extends View {
 
                 }
 
-                if (sheepPosX <= -width / 3) {
+                if (flerePoint) {
                     health--;
-                            if (health == 2) {
-                                lifeThree = notlifeThree;
-                            } else if (health == 1) {
-                                lifeTwo = notlifeTwo;
-                            } else {
-
+                            if (health == 0) {
+                                alive = false;
                             }
                 }
-
-                sheepPosNotSet = true;
+                sheepPosX = 0;
                 flerePoint = true;
                 sheepPosNotSet = true;
-
+                postInvalidate();
             }
 
 

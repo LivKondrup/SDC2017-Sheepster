@@ -3,9 +3,11 @@ package software.unf.dk.sheepster;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -52,14 +54,54 @@ public class lvl2Activty extends MainActivity {
         String highscoreGemt = "" + highscoreGemt1;
 
         highscoreLvl2 = (TextView) findViewById(R.id.highscoreLvl2);
-        highscoreLvl2.setText(highscoreGemt);
+        highscoreLvl2.setText("Highscore: " + highscoreGemt);
+
+        lvl2Sheep.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                float sheepPosX = lvl2Sheep.getSheepPosX();
+                float sheepPosY = lvl2Sheep.getSheepPosY();
+                float height = view.getHeight();
+                float width = view.getWidth();
+                float X = motionEvent.getX();
+                float Y = motionEvent.getY();
+
+                if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl2Sheep.getFlerePoint()) {
+                    count++;
+                    String count2 = "" + count;
+                    clickCount2.setText(count2);
+                    lvl2Sheep.setFlerePoint(false);
+                }
+                //if(count==sheepTotal()){
+                //    count= count-1;
+                //}
+                /*
+
+                if (bcount==true) {
+                    if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
+                        count++;
+                        String count2 = "" + count;
+                        clickCount.setText(count2);
+                        bcount = false;
+                    }
+
+
+                }*/
+                return false;
+            }
+
+
+        });
+
+        lvl2Sheep.animation(true);
+        new TjecAlive().start();
     }
 
     public void sheepCountButton2 (View view){
         count3++;
         count4 = "" + count3;
         clickCount2.setText(count4);
-        lvl2Sheep.animation();
+        lvl2Sheep.animation(true);
     }
 
     /*public void looseOneLife(View view){
@@ -84,7 +126,7 @@ public class lvl2Activty extends MainActivity {
 
 
     // Highscore + Gameover + return to mainActivity
-    public void hiscoreToMain(View view){
+    public void hiscoreToMain(){
         Intent hiscoreIntentString = new Intent(this, MainActivity.class);
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
@@ -105,5 +147,24 @@ public class lvl2Activty extends MainActivity {
 
             //Skif Activity til MainActivity
             startActivity(hiscoreIntentString);
+    }
+
+    public class TjecAlive extends Thread{
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+
+            }
+            while (lvl2Sheep.getAlive()){
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+
+                }
+            }
+            hiscoreToMain();
+        }
     }
 }

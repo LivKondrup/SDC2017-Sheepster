@@ -46,12 +46,6 @@ public class MainActivity extends Activity {
     }
 
     //Knappen kalder denne metode, som kalder metoden i CanvasView. I kan ikke få knapper til direkte at kalde metoder i jeres View
-    public void animation(View view) {
-        cv.animation();
-    }
-    public void animation2(View view) {
-        cv2.animation();
-    }
 
     public void tolvl1(View view) {
         Intent lvl1Intent = new Intent(this, lvl1Activity.class);

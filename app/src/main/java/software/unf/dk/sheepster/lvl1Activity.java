@@ -51,6 +51,7 @@ public class lvl1Activity extends MainActivity {
                 //if(count==sheepTotal()){
                 //    count= count-1;
                 //}
+                /*
 
                 if (bcount==true) {
                     if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
@@ -61,14 +62,14 @@ public class lvl1Activity extends MainActivity {
                     }
 
 
-                }
+                }*/
                 return false;
             }
 
 
         });
 
-        lvl1Sheep.animation();
+        lvl1Sheep.animation(false);
 
     }
 
