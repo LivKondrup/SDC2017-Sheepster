@@ -75,11 +75,11 @@ public class CanvasView extends View {
         textColor.setARGB(255, 0, 0, 0);
         //Kan også bruge variabelNavn.setARGB(). A er gennemsigtigheden, R er rød, G er grøn og B er blå.
         //Brug den til at lave mere præcise farver.
-
         postInvalidate();
     }
 
     public void animation() {
+        flerePoint = true;
         playing = true;
         sleepTime = 20;
         Timer animate = new Timer();
@@ -146,6 +146,14 @@ public class CanvasView extends View {
         this.playing = playing;
     }
 
+    public boolean getFlerePoint(){
+        return flerePoint;
+    }
+
+    public void setFlerePoint(boolean point){
+        flerePoint = point;
+    }
+
     public class Timer extends Thread {
         @Override
         public void run() {
@@ -198,10 +206,5 @@ public class CanvasView extends View {
     public  float getSheepPosY(){
         return sheepPosY;
     }
-
-    public boolean getFlerePoint(){
-        return flerePoint;
-    }
-
 }
 

@@ -42,7 +42,15 @@ public class lvl1Activity extends MainActivity {
                 float X = motionEvent.getX();
                 float Y = motionEvent.getY();
 
-
+                if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl1Sheep.getFlerePoint()) {
+                    count++;
+                    String count2 = "" + count;
+                    clickCount.setText(count2);
+                    lvl1Sheep.setFlerePoint(false);
+                }
+                //if(count==sheepTotal()){
+                //    count= count-1;
+                //}
 
                 if (bcount==true) {
                     if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
@@ -63,6 +71,19 @@ public class lvl1Activity extends MainActivity {
         lvl1Sheep.animation();
 
     }
+
+  /*  public int sheepTotal () {
+        while (true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            int totalSheep = lvl1Sheep.getTotalFaar();
+            return totalSheep;
+        }
+
+    }*/
 
 
 
