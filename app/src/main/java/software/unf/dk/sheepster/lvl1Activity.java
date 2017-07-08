@@ -40,8 +40,6 @@ public class lvl1Activity extends MainActivity {
                 float Y = motionEvent.getY();
                 boolean bcount = true;
 
-                //float action = motionEvent.getAction();
-                //action==motionEvent.ACTION_DOWN;
                 if (bcount) {
                     if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
                         count++;
@@ -66,17 +64,7 @@ public class lvl1Activity extends MainActivity {
 
     }
 
-  /*  public void restartSheep(){
 
-    }
-if(sheepPosX < 0){
-        lvl1Sheep.animation();
-    }*/
-
-
-  //  public void setCount(int count1){
- //       count = count1;
- //   }
 
     public void backButton(View view) {
         lvl1Sheep.setPlaying(false);

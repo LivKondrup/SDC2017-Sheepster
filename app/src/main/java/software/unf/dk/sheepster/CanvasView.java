@@ -111,16 +111,8 @@ public class CanvasView extends View {
         paint.setTextSize(width/10);
 
 
-
-
-
-     //   float rectX = width/3;    //position
         float rectY = height/5;
         float rectWidth = width/2.05f;
-      //  int rectHeight = 20;
-      //  float textWidth = paint.measureText(text);
-
-
 
         paint.setColor(Color.RED);
         canvas.drawText(text, rectWidth, rectY, paint);
@@ -128,8 +120,6 @@ public class CanvasView extends View {
 
         //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
         //Der skulle også stå nogenlunde gennemskueligt hvad parametrene skal være
-        // canvas.drawRect(0, 0, width, height, sky);
-
 
 
         //Sæt billederne til den størrelse i vil have dem. Parametrene er det originale BitMap, bredden af det nye bitmap, højden af det nye bitmap, true.
