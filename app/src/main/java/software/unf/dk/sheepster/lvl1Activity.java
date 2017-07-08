@@ -14,6 +14,8 @@ public class lvl1Activity extends MainActivity {
     private TextView clickCount;
     private CanvasView lvl1Sheep;
     private Paint sky;
+    public boolean bcount = true;
+
 
 
 
@@ -26,6 +28,8 @@ public class lvl1Activity extends MainActivity {
         fence = (ImageView) findViewById(R.id.fence);
 
 
+
+
         lvl1Sheep.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -35,19 +39,17 @@ public class lvl1Activity extends MainActivity {
                 float width = view.getWidth();
                 float X = motionEvent.getX();
                 float Y = motionEvent.getY();
-                boolean bcount = true;
 
-                if (bcount) {
+
+
+                if (bcount==true) {
                     if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
                         count++;
                         String count2 = "" + count;
                         clickCount.setText(count2);
-
-
+                        bcount = false;
                     }
-                    bcount = false;
-                }
-                if (bcount == false){
+
 
                 }
                 return false;
@@ -55,8 +57,10 @@ public class lvl1Activity extends MainActivity {
 
 
         });
-
+        boolean flerePoint = lvl1Sheep.getFlerePoint();
         lvl1Sheep.animation();
+        bcount=flerePoint;
+
 
 
     }

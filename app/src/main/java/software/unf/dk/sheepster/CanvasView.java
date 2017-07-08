@@ -37,6 +37,7 @@ public class CanvasView extends View {
     private TextView clickCount;
     public String text = "0";
     boolean playing;
+    boolean flerePoint;
 
     public CanvasView(Context context) {
         super(context);
@@ -127,19 +128,11 @@ public class CanvasView extends View {
         //Bredden og højden skal være i pixels
 
         canvas.drawBitmap(standardSheep, sheepPosX, sheepPosY, null);
-
-
     }
 
     public void setPlaying(boolean playing) {
         this.playing = playing;
     }
-
-
-    //public void calSheepPos(double time, double angle, int velocity){
-    //    sheepPosX = width/2 - (float)(velocity* Math.cos(angle)*time);
-    //    sheepPosY = height/2 - (float)((0-0.01)*time*time+velocity*Math.sin(angle));
-    //}
 
     public class Timer extends Thread {
         @Override
@@ -158,13 +151,6 @@ public class CanvasView extends View {
                         sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
 
                     }
-                    //else if (sheepPosY > (height-(height/5)*3)+1){
-                    //  sheepPosX -= width/300;
-                    //}else if (sheepPosX < width/3){
-                    //  sheepPosX -= width/300;
-
-                    // }
-
 
                     postInvalidate();
 
@@ -172,7 +158,9 @@ public class CanvasView extends View {
                 }
 
                 sheepPosNotSet = true;
+                flerePoint = true;
             }
+
 
 
         }
@@ -184,6 +172,10 @@ public class CanvasView extends View {
 
     public  float getSheepPosY(){
         return sheepPosY;
+    }
+
+    public boolean getFlerePoint(){
+        return flerePoint;
     }
 
 }
