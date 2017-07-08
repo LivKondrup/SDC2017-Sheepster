@@ -32,12 +32,31 @@ public class lvl1Activity extends MainActivity {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 float sheepPosX = lvl1Sheep.getSheepPosX();
                 float sheepPosY = lvl1Sheep.getSheepPosY();
-               // if(sheepPosX > ) {
-                    count++;
-                    String count2 = "" + count;
-                    clickCount.setText(count2);
-              //  }
+                float height = view.getHeight();
+                float width = view.getWidth();
+                float X = motionEvent.getX();
+                float Y = motionEvent.getY();
+                boolean bcount = true;
 
+                //float action = motionEvent.getAction();
+                //action==motionEvent.ACTION_DOWN;
+                if (bcount) {
+                    if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3) {
+                        count++;
+                        String count2 = "" + count;
+                        clickCount.setText(count2);
+                        bcount = false;
+
+                    }
+                }
+             //   if (bcount = false)
+
+
+                if(sheepPosX < -(width-width/3)){
+                    lvl1Sheep.animation();
+                    bcount = true;
+
+                }
 
 
                 return false;

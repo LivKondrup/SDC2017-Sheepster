@@ -208,5 +208,6 @@ public class CanvasView extends View {
     public  float getSheepPosY(){
         return sheepPosY;
     }
+
 }
 
