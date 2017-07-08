@@ -24,9 +24,6 @@ public class lvl1Activity extends MainActivity {
         clickCount = findViewById(R.id.clickCount);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
-        sky = new Paint();
-        sky.setARGB(255, 115, 195, 62);
-
 
 
         lvl1Sheep.setOnTouchListener(new View.OnTouchListener() {

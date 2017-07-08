@@ -23,17 +23,15 @@ public class lvl2Activty extends MainActivity {
     private TextView highscoreLvl2;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl2);
 
-
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
-
-
 
         clickCount2 = findViewById(R.id.countlvl2);
         life = 3;

@@ -23,6 +23,7 @@ import android.widget.TextView;
  * Created by deltager on 06-07-17.
  */
 
+
 public class CanvasView extends View {
 
     //Feltvariabler
@@ -36,7 +37,6 @@ public class CanvasView extends View {
     private TextView clickCount;
     public String text = "0";
     boolean playing;
-
 
     public CanvasView(Context context) {
         super(context);
@@ -91,12 +91,13 @@ public class CanvasView extends View {
                 canvas.drawRect(0,0, width, height, grass);
 
         //Funktion to make blue background, MANGLER AT GØRE TIL REKTANGLER
-            Paint sky;
-                sky= new Paint();
+                Paint sky;
+                sky = new Paint();
                 sky.setARGB(255, 51, 181, 241);
                 //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
                 //Der skulle også stå nogenlunde gennemskueligt hvad parametrene skal være
-                canvas.drawRect(0, 0, width, (height/7)*4, sky);
+                canvas.drawRect(0, 0, width, (height / 7) * 4, sky);
+
 
         if (sheepPosNotSet) {
             standardSheep = Bitmap.createScaledBitmap(standardSheep, (int) (width / 3)+1, (int) (height / 3)+1, true);
