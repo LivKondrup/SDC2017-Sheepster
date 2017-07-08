@@ -2,6 +2,7 @@ package software.unf.dk.sheepster;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -17,6 +18,7 @@ public class MainActivity extends Activity {
     public int life;
     private TextView highScoreTextView;
     private int highscoreGemt1;
+    private Paint sky;
 
     CanvasView cv;
     CanvasView cv2;
@@ -25,6 +27,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sky = new Paint();
+        sky.setARGB(255,115,195,62);
 
         /*Intent hiscoreIntentString = getIntent();
         highscore = hiscoreIntentString.getStringExtra("Highscore");

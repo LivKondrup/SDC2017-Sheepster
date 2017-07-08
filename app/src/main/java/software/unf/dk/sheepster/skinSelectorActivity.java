@@ -2,6 +2,7 @@ package software.unf.dk.sheepster;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ public class skinSelectorActivity extends Activity {
 
     private int highscoreGemt1;
     private TextView highscoreTextview;
+    private Paint sky;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class skinSelectorActivity extends Activity {
         highscoreTextview = (TextView) findViewById(R.id.skinSelectorHighscoreTextView);
         highscoreTextview.setText("Highscore: " + highscoreGemt1);
 
+        sky = new Paint();
+        sky.setARGB(255,115,195,62);
 
     }
     public void backButton3 (View view) {
