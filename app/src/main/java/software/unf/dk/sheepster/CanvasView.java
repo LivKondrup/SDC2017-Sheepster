@@ -27,7 +27,7 @@ import android.widget.TextView;
 public class CanvasView extends View {
 
     //Feltvariabler
-    Bitmap standardSheep, lifeOne, lifeTwo, lifeThree;
+    Bitmap standardSheep, lifeOne, lifeTwo, lifeThree, notlifeOne, notlifeTwo, notlifeThree;
     int sleepTime, velocity;
     boolean sheepPosNotSet;
     double angle;
@@ -38,6 +38,7 @@ public class CanvasView extends View {
     public String text = "0";
     boolean playing;
     boolean flerePoint;
+     public int health = 3;
 
     public CanvasView(Context context) {
         super(context);
@@ -64,6 +65,9 @@ public class CanvasView extends View {
         lifeTwo = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
         lifeThree = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
 
+        notlifeOne = BitmapFactory.decodeResource(this.getResources(), R.drawable.notlife);
+        notlifeTwo = BitmapFactory.decodeResource(this.getResources(), R.drawable.notlife);
+        notlifeThree = BitmapFactory.decodeResource(this.getResources(), R.drawable.notlife);
 
 
         //Sæt paint. Altså farver (og tekststørrelse) som bruges til at tegne
@@ -164,6 +168,19 @@ public class CanvasView extends View {
 
 
                 }
+
+                if (sheepPosX <= -width / 3) {
+                    health--;
+                            if (health == 2) {
+                                lifeThree = notlifeThree;
+                            } else if (health == 1) {
+                                lifeTwo = notlifeTwo;
+                            } else {
+
+                            }
+                }
+
+                sheepPosNotSet = true;
                 flerePoint = true;
                 sheepPosNotSet = true;
 
