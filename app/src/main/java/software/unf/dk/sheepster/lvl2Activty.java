@@ -98,13 +98,7 @@ public class lvl2Activty extends MainActivity {
     }
 
 
-    public void sheepCountButton2 (View view){
-        count3++;
-        count4 = "" + count3;
-        clickCount2.setText(count4);
-        //Skal efterfølgende linje være der.
-        lvl2Sheep.animation(true,100);
-    }
+
 
     /*public void looseOneLife(View view){
 
@@ -132,8 +126,8 @@ public class lvl2Activty extends MainActivity {
         Intent hiscoreIntentString = new Intent(this, MainActivity.class);
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
-            if (count3>highscoreGemt1) {
-                highscoreGemt1 = count3;
+            if (count>highscoreGemt1) {
+                highscoreGemt1 = count;
                 count5 = "" + highscoreGemt1;
                 hiscoreIntentString.putExtra("Highscore", count5);
             } else {
