@@ -46,10 +46,11 @@ public class lvl1Activity extends MainActivity {
             mp = MediaPlayer.create(this, R.raw.poop);
         } else if(selectedSkin == 7) {
             mp = MediaPlayer.create(this, R.raw.trump);
+        } else if (selectedSkin == 9 || selectedSkin == 6) {
+            mp = MediaPlayer.create(this, R.raw.medic2);
         } else {
             mp = MediaPlayer.create(this, R.raw.sheepsound);
         }
-
         lvl1Sheep.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {

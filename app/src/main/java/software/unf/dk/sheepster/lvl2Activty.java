@@ -46,6 +46,8 @@ public class lvl2Activty extends MainActivity {
                 mp1 = MediaPlayer.create(this, R.raw.poop);
             } else if (selectedSkin == 7) {
                 mp1 = MediaPlayer.create(this, R.raw.trump);
+            } else if (selectedSkin == 9 || selectedSkin == 6) {
+                mp1 = MediaPlayer.create(this, R.raw.medic2);
             } else {
                 mp1 = MediaPlayer.create(this, R.raw.sheepsound);
             }
@@ -57,6 +59,8 @@ public class lvl2Activty extends MainActivity {
             mp2 = MediaPlayer.create(this, R.raw.poop);
         } else if (selectedSkin == 7) {
             mp2 = MediaPlayer.create(this, R.raw.trump);
+        } else if (selectedSkin == 9 || selectedSkin == 6) {
+            mp2 = MediaPlayer.create(this, R.raw.medic2);
         } else {
             mp2 = MediaPlayer.create(this, R.raw.sheepsound);
         }
@@ -68,6 +72,8 @@ public class lvl2Activty extends MainActivity {
             mp3 = MediaPlayer.create(this, R.raw.poop);
         } else if (selectedSkin == 7) {
             mp3 = MediaPlayer.create(this, R.raw.trump);
+        } else if (selectedSkin == 9 || selectedSkin == 6) {
+            mp3 = MediaPlayer.create(this, R.raw.medic2);
         } else {
             mp3 = MediaPlayer.create(this, R.raw.sheepsound);
         }
