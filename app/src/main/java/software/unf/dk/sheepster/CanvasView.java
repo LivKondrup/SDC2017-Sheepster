@@ -261,7 +261,7 @@ public class CanvasView extends View {
 
                     if (sheepPosX > -width /3) {
                         sheepPosX -= (width / widthDivideretSlut) + count;
-                        sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 3);
+                        sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
 
                     }
 
@@ -269,12 +269,12 @@ public class CanvasView extends View {
 
                         if (sheepPosX2 > -width /3) {
                             sheepPosX2 -= (width / (widthDivideretSlut)) + count;
-                            sheepPosY2 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX2 * sheepPosX2)) + (((-height * 2) / width) * sheepPosX2) + (height / 2);
+                            sheepPosY2 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX2 * sheepPosX2)) + 1.15f*(((-height * 2) / width) * sheepPosX2) + (height / 1.5f);
                         }
 
                         if (sheepPosX3 > -width /3) {
                             sheepPosX3 -= (width / widthDivideretSlut) + count;
-                            sheepPosY3 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX3 * sheepPosX3)) + (((-height * 2) / width) * sheepPosX3) + (height / 4);
+                            sheepPosY3 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX3 * sheepPosX3)) + 1.1f*(((-height * 2) / width) * sheepPosX3) + (height / 3);
                         }
 
                     }

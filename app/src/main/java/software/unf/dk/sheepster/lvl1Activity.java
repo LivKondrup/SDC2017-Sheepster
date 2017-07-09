@@ -87,7 +87,7 @@ public class lvl1Activity extends MainActivity {
 
 
                 }*/
-                lvl1Sheep.abc(count);
+                lvl1Sheep.abc(0);
                 return false;
             }
 
