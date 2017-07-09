@@ -1,10 +1,14 @@
 package software.unf.dk.sheepster;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,7 +21,7 @@ public class lvl1Activity extends MainActivity {
     private CanvasView lvl1Sheep;
     private Paint sky;       // hvorfor er denne variabel oprettet, dette er det eneste sted den står?
     String nothing;
-
+    private int selectedSkin;
 
     //Bitmap darthSheep;
 
@@ -26,12 +30,25 @@ public class lvl1Activity extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl1);
+
+        SharedPreferences prefs2 = getSharedPreferences("prefs2", skinSelectorActivity.MODE_PRIVATE);
+        selectedSkin = prefs2.getInt("SkinGemt", selectedSkin);
+
         clickCount = findViewById(R.id.clickCount);
         clickMeText = findViewById(R.id.clickSheep2TextView);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
 
-
+        final MediaPlayer mp;
+        if(selectedSkin == 11){
+            mp = MediaPlayer.create(this, R.raw.lightsaber);
+        } else if(selectedSkin == 3) {
+            mp = MediaPlayer.create(this, R.raw.poop);
+        } else if(selectedSkin == 7) {
+            mp = MediaPlayer.create(this, R.raw.trump);
+        } else {
+            mp = MediaPlayer.create(this, R.raw.sheepsound);
+        }
 
         lvl1Sheep.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -50,6 +67,7 @@ public class lvl1Activity extends MainActivity {
                     nothing = "";
                     clickMeText.setText(nothing);
                     lvl1Sheep.setFlerePoint(false);
+                    mp.start();
                 }
 
 

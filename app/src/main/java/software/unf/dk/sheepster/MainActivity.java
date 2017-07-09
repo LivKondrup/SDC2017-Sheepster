@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.media.Image;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -42,6 +43,7 @@ public class MainActivity extends Activity {
         //Opdater TextView
         highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
         highScoreTextView.setText("Highscore: " + highscoreGemt1);
+
 
     }
 

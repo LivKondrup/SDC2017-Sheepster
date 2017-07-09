@@ -141,6 +141,16 @@
         android:onClick="trumpSheepImagebutton"
         app:srcCompat="@drawable/trumpsheep" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="12dp"
+        android:text="Select your favourite sheep !!!!"
+        android:textSize="25sp" />
+
     <ImageButton
         android:id="@+id/blackSheepImagebutton"
         android:layout_width="wrap_content"
@@ -167,12 +177,12 @@
         android:id="@+id/BrownSheepImagebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/backButtonTextviewSkinSelector"
-        android:layout_alignRight="@+id/backButtonTextviewSkinSelector"
-        android:layout_below="@+id/blueSheepImagebutton"
         android:background="@drawable/brownsheep"
         android:onClick="BrownSheepImagebutton"
-        app:srcCompat="@drawable/brownsheep" />
+        app:srcCompat="@drawable/brownsheep"
+        android:layout_below="@+id/blueSheepImagebutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:id="@+id/darthSheepImagebutton"
@@ -184,19 +194,6 @@
         android:background="@drawable/darthsheep"
         android:onClick="darthSheepImagebutton"
         app:srcCompat="@drawable/darthsheep" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp"
-        android:text="Select your favourite sheep !!!!"
-        android:textSize="25sp" />
 
 
 </RelativeLayout>

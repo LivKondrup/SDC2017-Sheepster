@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,10 +19,11 @@ public class lvl2Activty extends MainActivity {
     private TextView clickCount2;
     private CanvasView lvl2Sheep;
     private ImageView fence2;
+    private int count3;
     public String nothing2;
     public String count5;
-    private int antalLiv=3;     // hvorfor er denne variabel oprettet, dette er det eneste sted den står?
-    private int highscoreGemt1, selectedSkin;    // hvorfor er denne variabel oprettet, dette er det eneste sted den står?
+    private int antalLiv=3;
+    private int highscoreGemt1, selectedSkin;
     public static String highscoreGemt = "highscoreGemt";
     private TextView highscoreLvl2, clickMeText2;
 
@@ -31,13 +33,27 @@ public class lvl2Activty extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl2);
 
+        SharedPreferences prefs2 = getSharedPreferences("prefs2", skinSelectorActivity.MODE_PRIVATE);
+        selectedSkin = prefs2.getInt("SkinGemt", selectedSkin);
 
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
+        final MediaPlayer mp2;
+        if(selectedSkin == 11){
+            mp2 = MediaPlayer.create(this, R.raw.lightsaber);}
+                else if (selectedSkin == 3) {
+                mp2 = MediaPlayer.create(this, R.raw.poop);
+            } else if (selectedSkin == 7) {
+                mp2 = MediaPlayer.create(this, R.raw.trump);
+            } else {
+                mp2 = MediaPlayer.create(this, R.raw.sheepsound);
+            }
 
 
         clickCount2 = findViewById(R.id.countlvl2);
+        count3 = 0;
+        life = 3;
         lvl2Sheep = (CanvasView) findViewById(R.id.lvl2Sheep);
         fence2 = (ImageView) findViewById(R.id.fence2);
 
@@ -63,7 +79,6 @@ public class lvl2Activty extends MainActivity {
                 float X = motionEvent.getX();
                 float Y = motionEvent.getY();
 
-
                 if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl2Sheep.getFlerePoint()) {
                     count++;
                     String count2 = "Sheep: " + count;
@@ -71,6 +86,9 @@ public class lvl2Activty extends MainActivity {
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
                     lvl2Sheep.setFlerePoint(false);
+
+
+                    mp2.start();
                 }
 
                 if (X > sheepPosX2 && X < sheepPosX2 + width / 3 && Y > sheepPosY2 && Y < sheepPosY2 + height / 3 && lvl2Sheep.getFlerePoint2()) {
