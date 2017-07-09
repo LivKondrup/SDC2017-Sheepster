@@ -13,10 +13,12 @@ import android.widget.TextView;
 public class lvl1Activity extends MainActivity {
 
     private ImageView fence;
-    private TextView clickCount;
+    private TextView clickCount, clickMeText;
     private CanvasView lvl1Sheep;
     private Paint sky;
     public boolean bcount = true;
+    String nothing;
+
 
     //Bitmap darthSheep;
 
@@ -26,6 +28,7 @@ public class lvl1Activity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl1);
         clickCount = findViewById(R.id.clickCount);
+        clickMeText = (TextView) findViewById(R.id.clickSheep2TextView);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
 
@@ -44,8 +47,10 @@ public class lvl1Activity extends MainActivity {
 
                 if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl1Sheep.getFlerePoint()) {
                     count++;
-                    String count2 = "" + count;
+                    String count2 = "Sheep: " + count;
                     clickCount.setText(count2);
+                    nothing = "";
+                    clickMeText.setText(nothing);
                     lvl1Sheep.setFlerePoint(false);
                 }
                 //if(count==sheepTotal()){

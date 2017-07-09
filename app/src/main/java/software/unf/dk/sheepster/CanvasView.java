@@ -19,11 +19,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-/**
- * Created by deltager on 06-07-17.
- */
-
-
 public class CanvasView extends View {
 
     //Feltvariabler
@@ -105,7 +100,7 @@ public class CanvasView extends View {
         //Funktion to make blue background, MANGLER AT GØRE TIL REKTANGLER
                 Paint sky;
                 sky = new Paint();
-                sky.setARGB(255, 51, 181, 241);
+                sky.setARGB(255, 243, 155, 60);
                 //Tegn ting. Se på de metoder Studio foreslår når i skriver variabelNavn.draw
                 //Der skulle også stå nogenlunde gennemskueligt hvad parametrene skal være
                 canvas.drawRect(0, 0, width, (height / 7) * 4, sky);
@@ -119,6 +114,15 @@ public class CanvasView extends View {
             sheepPosNotSet = false;
         }
         if (lvl2) {
+
+            lifeOne = Bitmap.createScaledBitmap(lifeOne, (int) (width/6), (int) (width / 6), true);
+            lifeTwo = Bitmap.createScaledBitmap(lifeTwo, (int) (width/6), (int) (width / 6), true);
+            lifeThree = Bitmap.createScaledBitmap(lifeThree, (int) (width/6), (int) (width / 6), true);
+
+            notlifeOne = Bitmap.createScaledBitmap(notlifeOne, (int) (width/6), (int) (width / 6), true);
+            notlifeTwo = Bitmap.createScaledBitmap(notlifeTwo, (int) (width/6), (int) (width / 6), true);
+            notlifeThree = Bitmap.createScaledBitmap(notlifeThree, (int) (width/6), (int) (width / 6), true);
+
             if (health == 3) {
                 canvas.drawBitmap(lifeOne, 5, 5, null);
                 canvas.drawBitmap(lifeTwo, 105, 5, null);

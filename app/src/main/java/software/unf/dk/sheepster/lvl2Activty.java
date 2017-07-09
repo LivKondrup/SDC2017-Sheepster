@@ -19,12 +19,12 @@ public class lvl2Activty extends MainActivity {
     private CanvasView lvl2Sheep;
     private ImageView fence2;
     private int count3;
-    public String count4;
+    public String nothing2;
     public String count5;
     private int antalLiv=3;
     private int highscoreGemt1;
     public static String highscoreGemt = "highscoreGemt";
-    private TextView highscoreLvl2;
+    private TextView highscoreLvl2, clickMeText2;
     Bitmap lost1life;
     Bitmap lost2Life;
     private  ImageView thirdLife;
@@ -51,6 +51,8 @@ public class lvl2Activty extends MainActivity {
         lvl2Sheep = (CanvasView) findViewById(R.id.lvl2Sheep);
         fence2 = (ImageView) findViewById(R.id.fence2);
 
+        clickMeText2 = findViewById(R.id.clickSheepTextView2);
+
         String highscoreGemt = "" + highscoreGemt1;
 
         highscoreLvl2 = (TextView) findViewById(R.id.highscoreLvl2);
@@ -68,8 +70,11 @@ public class lvl2Activty extends MainActivity {
 
                 if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl2Sheep.getFlerePoint()) {
                     count++;
-                    String count2 = "" + count;
+                    String count2 = "Sheep: " + count;
                     clickCount2.setText(count2);
+                    nothing2 = "";
+                    clickMeText2.setText(nothing2);
+
                     lvl2Sheep.setFlerePoint(false);
                 }
                 //if(count==sheepTotal()){

@@ -18,26 +18,26 @@
 
     <ImageButton
         android:id="@+id/level1"
-        android:layout_width="100sp"
+        android:layout_width="160sp"
         android:layout_height="40sp"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="88sp"
         android:background="@drawable/woodbutton"
         android:onClick="tolvl1"
-        android:text="Level 1"
-        android:layout_marginBottom="88sp"
-        android:layout_alignBottom="@+id/button2"
-        android:layout_centerHorizontal="true" />
+        android:text="Level 1" />
 
     <ImageButton
         android:id="@+id/button2"
-        android:layout_width="100sp"
+        android:layout_width="160sp"
         android:layout_height="40sp"
+        android:layout_alignLeft="@+id/level1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/level1"
+        android:layout_marginBottom="100sp"
         android:background="@drawable/woodbutton"
         android:onClick="tolvl2"
-        android:text="Level 2"
-        android:layout_marginBottom="100sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/level1"
-        android:layout_alignStart="@+id/level1" />
+        android:text="Level 2" />
 
     <ImageButton
         android:id="@+id/skinselector"
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:text="Level 2"
+        android:text="Game Mode"
         android:textSize="25sp" />
 
     <TextView
@@ -78,7 +78,7 @@
         android:layout_alignEnd="@+id/lvl2ButtonTextView"
         android:layout_alignRight="@+id/lvl2ButtonTextView"
         android:layout_alignTop="@+id/level1"
-        android:text="Level 1"
+        android:text="Sleep Mode"
         android:textSize="25sp" />
 
 </RelativeLayout>
