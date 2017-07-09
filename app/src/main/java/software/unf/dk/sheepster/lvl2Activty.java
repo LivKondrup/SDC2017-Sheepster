@@ -183,7 +183,7 @@ public class lvl2Activty extends MainActivity {
             editor.commit();
 
             //Skif Activity til MainActivity
-            startActivity(hiscoreIntentString);
+            finish();
     }
 
     public class TjecAlive extends Thread{
