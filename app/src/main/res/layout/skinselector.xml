@@ -21,16 +21,14 @@
         android:id="@+id/button3"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
+        android:layout_marginBottom="26dp"
         android:layout_weight="1"
         android:background="@drawable/woodbutton"
         android:onClick="backButton3"
-        android:text="Back" />
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/skinSelectorHighscoreTextView"
+        android:layout_toStartOf="@+id/skinSelectorHighscoreTextView" />
 
     <TextView
         android:id="@+id/backButtonTextviewSkinSelector"
@@ -186,6 +184,19 @@
         android:background="@drawable/darthsheep"
         android:onClick="darthSheepImagebutton"
         app:srcCompat="@drawable/darthsheep" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:text="Select your favourite sheep !!!!"
+        android:textSize="25sp" />
 
 
 </RelativeLayout>
