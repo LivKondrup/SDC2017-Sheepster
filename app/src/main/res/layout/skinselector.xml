@@ -13,6 +13,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_weight="1"
         android:background="@color/Grasscolor"
         app:srcCompat="@color/Grasscolor" />
 
@@ -26,6 +27,7 @@
         android:layout_marginBottom="40dp"
         android:layout_marginLeft="31dp"
         android:layout_marginStart="31dp"
+        android:layout_weight="1"
         android:background="@drawable/woodbutton"
         android:onClick="backButton3"
         android:text="Back" />
@@ -39,6 +41,7 @@
         android:layout_alignTop="@+id/button3"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
+        android:layout_weight="1"
         android:text="Back"
         android:textSize="25dp" />
 
@@ -49,7 +52,140 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
+        android:layout_weight="1"
         android:text="Highscore:"
         android:textSize="25dp" />
+
+    <ImageButton
+        android:id="@+id/standardSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/skinSelectorHighscoreTextView"
+        android:background="@drawable/sheepstandard"
+        android:onClick="standardSheepImagebutton"
+        app:srcCompat="@drawable/sheepstandard" />
+
+    <ImageButton
+        android:id="@+id/yellowSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/skinSelectorHighscoreTextView"
+        android:background="@drawable/yellowsheep"
+        android:onClick="yellowSheepImagebutton"
+        app:srcCompat="@drawable/yellowsheep" />
+
+    <ImageButton
+        android:id="@+id/doctorSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/yellowSheepImagebutton"
+        android:background="@drawable/doctorsheep"
+        android:onClick="doctorSheepImagebutton"
+        app:srcCompat="@drawable/doctorsheep" />
+
+    <ImageButton
+        android:id="@+id/greenSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/doctorSheepImagebutton"
+        android:background="@drawable/greensheep"
+        android:onClick="greenSheepImagebutton"
+        app:srcCompat="@drawable/greensheep" />
+
+    <ImageButton
+        android:id="@+id/lightBlueSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pinkSheepImagebutton"
+        android:layout_alignStart="@+id/pinkSheepImagebutton"
+        android:layout_below="@+id/skinSelectorHighscoreTextView"
+        android:background="@drawable/lightblue"
+        android:onClick="lightblueSheepImagebutton"
+        app:srcCompat="@drawable/lightblue" />
+
+    <ImageButton
+        android:id="@+id/pinkSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/redcrossSheepImagebutton"
+        android:layout_alignStart="@+id/redcrossSheepImagebutton"
+        android:layout_below="@+id/lightBlueSheepImagebutton"
+        android:background="@drawable/pinksheep"
+        android:onClick="pinkSheepImagebutton"
+        app:srcCompat="@drawable/pinksheep" />
+
+    <ImageButton
+        android:id="@+id/redcrossSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/trumpSheepImagebutton"
+        android:layout_alignLeft="@+id/trumpSheepImagebutton"
+        android:layout_alignStart="@+id/trumpSheepImagebutton"
+        android:background="@drawable/redcrosssheep"
+        android:onClick="redcrossSheepImagebutton"
+        app:srcCompat="@drawable/redcrosssheep" />
+
+    <ImageButton
+        android:id="@+id/trumpSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greenSheepImagebutton"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/trumpsheep"
+        android:onClick="trumpSheepImagebutton"
+        app:srcCompat="@drawable/trumpsheep" />
+
+    <ImageButton
+        android:id="@+id/blackSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/standardSheepImagebutton"
+        android:background="@drawable/blacksheep"
+        android:onClick="blackSheepImagebutton"
+        app:srcCompat="@drawable/blacksheep" />
+
+    <ImageButton
+        android:id="@+id/blueSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/blackSheepImagebutton"
+        android:background="@drawable/bluesheep"
+        android:onClick="blueSheepImagebutton"
+        app:srcCompat="@drawable/bluesheep" />
+
+    <ImageButton
+        android:id="@+id/BrownSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/backButtonTextviewSkinSelector"
+        android:layout_alignRight="@+id/backButtonTextviewSkinSelector"
+        android:layout_below="@+id/blueSheepImagebutton"
+        android:background="@drawable/brownsheep"
+        android:onClick="BrownSheepImagebutton"
+        app:srcCompat="@drawable/brownsheep" />
+
+    <ImageButton
+        android:id="@+id/darthSheepImagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/greenSheepImagebutton"
+        android:layout_alignStart="@+id/greenSheepImagebutton"
+        android:layout_below="@+id/greenSheepImagebutton"
+        android:background="@drawable/darthsheep"
+        android:onClick="darthSheepImagebutton"
+        app:srcCompat="@drawable/darthsheep" />
+
 
 </RelativeLayout>

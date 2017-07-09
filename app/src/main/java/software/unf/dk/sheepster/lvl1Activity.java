@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class lvl1Activity extends MainActivity {
 
     private ImageView fence;
-    private TextView clickCount, clickMeText;
+    private TextView clickCount,clickMeText;
     private CanvasView lvl1Sheep;
     private Paint sky;
     public boolean bcount = true;
@@ -28,7 +28,7 @@ public class lvl1Activity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl1);
         clickCount = findViewById(R.id.clickCount);
-        clickMeText = (TextView) findViewById(R.id.clickSheep2TextView);
+        clickMeText = findViewById(R.id.clickSheep2TextView);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
 

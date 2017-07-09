@@ -22,7 +22,7 @@ public class lvl2Activty extends MainActivity {
     public String nothing2;
     public String count5;
     private int antalLiv=3;
-    private int highscoreGemt1;
+    private int highscoreGemt1, selectedSkin;
     public static String highscoreGemt = "highscoreGemt";
     private TextView highscoreLvl2, clickMeText2;
     Bitmap lost1life;
@@ -45,6 +45,7 @@ public class lvl2Activty extends MainActivity {
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
+
 
         clickCount2 = findViewById(R.id.countlvl2);
         life = 3;

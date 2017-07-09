@@ -3,6 +3,7 @@ package software.unf.dk.sheepster;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -20,17 +21,18 @@ import android.widget.TextView;
 
 
 public class CanvasView extends View {
-
     //Feltvariabler
     Bitmap standardSheep, lifeOne, lifeTwo, lifeThree, notlifeOne, notlifeTwo, notlifeThree;
     int sleepTime,widthDivideretSlut;
     boolean sheepPosNotSet, alive, lvl2;
     double angle;
     private float sheepPosX, sheepPosY, height, width;
+    private int selectedSkin;
     Paint textColor;
     boolean playing;
     boolean flerePoint;
-     public int health;
+    public int health;
+
 
     public CanvasView(Context context) {
         super(context);
@@ -49,7 +51,36 @@ public class CanvasView extends View {
 
     public void setup(Context context) {
         //Constructor
-        standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.sheepstandard);
+        //Hente gemt skin
+
+        SharedPreferences prefs2 = context.getSharedPreferences("prefs2", skinSelectorActivity.MODE_PRIVATE);
+        selectedSkin = prefs2.getInt("SkinGemt", selectedSkin);
+
+        if (selectedSkin == 1) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.blacksheep2);
+        } else if (selectedSkin == 2) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.bluesheep2);
+        } else if (selectedSkin == 3) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.brownsheep2);
+        } else if (selectedSkin == 4) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.lightbluesheep2);
+        } else if (selectedSkin == 5) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.pinksheep2);
+        } else if (selectedSkin == 6) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.redcrosssheep2);
+        } else if (selectedSkin == 7) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.trumpsheep2);
+        } else if (selectedSkin == 8) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.yellowsheep2);
+        } else if (selectedSkin == 9) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.doctorsheep2);
+        } else if (selectedSkin == 10) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.greensheep2);
+        } else if (selectedSkin == 11) {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.darthsheep2);
+        } else {
+            standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.sheepstandard2);
+        }
 
         //Creating Bitmaps for Lives (ImageViews)
         lifeOne = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
