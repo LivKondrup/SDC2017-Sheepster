@@ -39,17 +39,38 @@ public class lvl2Activty extends MainActivity {
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
+        final MediaPlayer mp1;
+        if(selectedSkin == 11){
+            mp1 = MediaPlayer.create(this, R.raw.lightsaber);}
+                else if (selectedSkin == 3) {
+                mp1 = MediaPlayer.create(this, R.raw.poop);
+            } else if (selectedSkin == 7) {
+                mp1 = MediaPlayer.create(this, R.raw.trump);
+            } else {
+                mp1 = MediaPlayer.create(this, R.raw.sheepsound);
+            }
+
         final MediaPlayer mp2;
         if(selectedSkin == 11){
             mp2 = MediaPlayer.create(this, R.raw.lightsaber);}
-                else if (selectedSkin == 3) {
-                mp2 = MediaPlayer.create(this, R.raw.poop);
-            } else if (selectedSkin == 7) {
-                mp2 = MediaPlayer.create(this, R.raw.trump);
-            } else {
-                mp2 = MediaPlayer.create(this, R.raw.sheepsound);
-            }
+        else if (selectedSkin == 3) {
+            mp2 = MediaPlayer.create(this, R.raw.poop);
+        } else if (selectedSkin == 7) {
+            mp2 = MediaPlayer.create(this, R.raw.trump);
+        } else {
+            mp2 = MediaPlayer.create(this, R.raw.sheepsound);
+        }
 
+        final MediaPlayer mp3;
+        if(selectedSkin == 11){
+            mp3 = MediaPlayer.create(this, R.raw.lightsaber);}
+        else if (selectedSkin == 3) {
+            mp3 = MediaPlayer.create(this, R.raw.poop);
+        } else if (selectedSkin == 7) {
+            mp3 = MediaPlayer.create(this, R.raw.trump);
+        } else {
+            mp3 = MediaPlayer.create(this, R.raw.sheepsound);
+        }
 
         clickCount2 = findViewById(R.id.countlvl2);
         count3 = 0;
@@ -86,9 +107,7 @@ public class lvl2Activty extends MainActivity {
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
                     lvl2Sheep.setFlerePoint(false);
-
-
-                    mp2.start();
+                    mp1.start();
                 }
 
                 if (X > sheepPosX2 && X < sheepPosX2 + width / 3 && Y > sheepPosY2 && Y < sheepPosY2 + height / 3 && lvl2Sheep.getFlerePoint2()) {
@@ -98,6 +117,7 @@ public class lvl2Activty extends MainActivity {
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
                     lvl2Sheep.setFlerePoint2(false);
+                    mp2.start();
                 }
 
 
@@ -109,6 +129,7 @@ public class lvl2Activty extends MainActivity {
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
                     lvl2Sheep.setFlerePoint3(false);
+                    mp3.start();
                 }
                 //if(count==sheepTotal()){
                 //    count= count-1;

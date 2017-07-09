@@ -1,28 +1,19 @@
 package software.unf.dk.sheepster;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 
 public class CanvasView extends View {
     //Feltvariabler
-    Bitmap standardSheep, lifeOne, lifeTwo, lifeThree, notlifeOne, notlifeTwo, notlifeThree,sheepFence, sheep3;
+    Bitmap lifeOne, lifeTwo, lifeThree, notlifeOne, notlifeTwo, notlifeThree, standardSheep;
     int sleepTime,widthDivideretSlut, count;
     boolean sheepPosNotSet, sheepPosNotSet2, sheepPosNotSet3, alive, lvl2;
     double angle;
@@ -52,8 +43,7 @@ public class CanvasView extends View {
     public void setup(Context context) {
         //Constructor
         standardSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.sheepstandard);
-        sheepFence = BitmapFactory.decodeResource(this.getResources(), R.drawable.fence);
-        sheep3 = BitmapFactory.decodeResource(this.getResources(), R.drawable.fancyforside);
+
         //Hente gemt skin
 
         SharedPreferences prefs2 = context.getSharedPreferences("prefs2", skinSelectorActivity.MODE_PRIVATE);
@@ -215,8 +205,8 @@ public class CanvasView extends View {
         //Bredden og højden skal være i pixels
 
         canvas.drawBitmap(standardSheep, sheepPosX, sheepPosY, null);
-        canvas.drawBitmap(sheepFence, sheepPosX2, sheepPosY2, null);
-        canvas.drawBitmap(sheep3, sheepPosX3, sheepPosY3, null);
+        canvas.drawBitmap(standardSheep, sheepPosX2, sheepPosY2, null);
+        canvas.drawBitmap(standardSheep, sheepPosX3, sheepPosY3, null);
     }
 
     public void setPlaying(boolean playing) {
