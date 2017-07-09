@@ -260,20 +260,20 @@ public class CanvasView extends View {
                     }
 
                     if (sheepPosX > -width /3) {
-                        sheepPosX -= width / (widthDivideretSlut + (count*2));
-                        sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
+                        sheepPosX -= (width / widthDivideretSlut) + count;
+                        sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 3);
 
                     }
 
                     if(lvl2){
 
                         if (sheepPosX2 > -width /3) {
-                            sheepPosX2 -= (width / (widthDivideretSlut)) + 2*count;
+                            sheepPosX2 -= (width / (widthDivideretSlut)) + count;
                             sheepPosY2 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX2 * sheepPosX2)) + (((-height * 2) / width) * sheepPosX2) + (height / 2);
                         }
 
                         if (sheepPosX3 > -width /3) {
-                            sheepPosX3 -= (width / widthDivideretSlut) +2*count;
+                            sheepPosX3 -= (width / widthDivideretSlut) + count;
                             sheepPosY3 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX3 * sheepPosX3)) + (((-height * 2) / width) * sheepPosX3) + (height / 4);
                         }
 

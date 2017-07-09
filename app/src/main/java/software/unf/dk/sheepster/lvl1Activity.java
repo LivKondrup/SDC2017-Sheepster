@@ -87,27 +87,15 @@ public class lvl1Activity extends MainActivity {
 
 
                 }*/
+                lvl1Sheep.abc(count);
                 return false;
             }
 
 
         });
-        lvl1Sheep.abc(count);
+
         lvl1Sheep.animation(false,300);
     }
-
-  /*  public int sheepTotal () {
-        while (true) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            int totalSheep = lvl1Sheep.getTotalFaar();
-            return totalSheep;
-        }
-
-    }*/
 
 
 
