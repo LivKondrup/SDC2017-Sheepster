@@ -153,14 +153,14 @@ public class CanvasView extends View {
 
         if (sheepPosNotSet2) {
             standardSheep = Bitmap.createScaledBitmap(standardSheep, (int) (width / 3)+1, (int) (height / 3)+1, true);
-            sheepPosX2 = width;
+            sheepPosX2 = width+width/4;
             sheepPosY2 = height - (height / 5) * 4;
 
             sheepPosNotSet2 = false;
         }
         if (sheepPosNotSet3) {
             standardSheep = Bitmap.createScaledBitmap(standardSheep, (int) (width / 3)+1, (int) (height / 3)+1, true);
-            sheepPosX3 = width;
+            sheepPosX3 = width+width/3;
             sheepPosY3 = height - (height / 5) * 2;
 
             sheepPosNotSet3 = false;
