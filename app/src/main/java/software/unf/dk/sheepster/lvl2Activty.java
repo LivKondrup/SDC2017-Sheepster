@@ -25,10 +25,6 @@ public class lvl2Activty extends MainActivity {
     private int highscoreGemt1, selectedSkin;
     public static String highscoreGemt = "highscoreGemt";
     private TextView highscoreLvl2, clickMeText2;
-    Bitmap lost1life;
-    Bitmap lost2Life;
-    private  ImageView thirdLife;
-    private  ImageView secondLife;
 
 
     @Override
@@ -36,11 +32,6 @@ public class lvl2Activty extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lvl2);
 
-        /*thirdLife = (ImageView) findViewById(R.id.firsLifeImageView);
-        thirdLife = BitmapFactory.decodeResource(this.getResources(), R.drawable.life);
-
-        secondLife = (ImageView) findViewById(R.id.secondLifeImageView);
-        highscoreLvl2.setText(highscoreGemt);*/
 
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
@@ -48,7 +39,6 @@ public class lvl2Activty extends MainActivity {
 
 
         clickCount2 = findViewById(R.id.countlvl2);
-        life = 3;
         lvl2Sheep = (CanvasView) findViewById(R.id.lvl2Sheep);
         fence2 = (ImageView) findViewById(R.id.fence2);
 
@@ -68,6 +58,11 @@ public class lvl2Activty extends MainActivity {
                 float width = view.getWidth();
                 float X = motionEvent.getX();
                 float Y = motionEvent.getY();
+                float sheepPosX2 =lvl2Sheep.getSheepPosX2();
+                float sheepPosY2 = lvl2Sheep.getSheepPosY2();
+                float sheepPosX3 =lvl2Sheep.getSheepPosX3();
+                float sheepPosY3 = lvl2Sheep.getSheepPosY3();
+
 
                 if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl2Sheep.getFlerePoint()) {
                     count++;
@@ -76,6 +71,24 @@ public class lvl2Activty extends MainActivity {
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
 
+                    lvl2Sheep.setFlerePoint(false);
+                }
+
+                if (X > sheepPosX2 && X < sheepPosX2 + width / 3 && Y > sheepPosY2 && Y < sheepPosY2 + height / 3 && lvl2Sheep.getFlerePoint()) {
+                    count++;
+                    String count2 = "Sheep: " + count;
+                    clickCount2.setText(count2);
+                    nothing2 = "";
+                    clickMeText2.setText(nothing2);
+                    lvl2Sheep.setFlerePoint2(false);
+                }
+
+                if (X > sheepPosX3 && X < sheepPosX3 + width / 3 && Y > sheepPosY3 && Y < sheepPosY3 + height / 3 && lvl2Sheep.getFlerePoint()) {
+                    count++;
+                    String count2 = "Sheep: " + count;
+                    clickCount2.setText(count2);
+                    nothing2 = "";
+                    clickMeText2.setText(nothing2);
                     lvl2Sheep.setFlerePoint(false);
                 }
                 //if(count==sheepTotal()){
@@ -102,25 +115,6 @@ public class lvl2Activty extends MainActivity {
         lvl2Sheep.animation(true,100);
         new TjecAlive().start();
     }
-
-
-
-
-    /*public void looseOneLife(View view){
-
-        if (antalLiv == 3){
-            lost1life = BitmapFactory.decodeResource(this.getResources(), R.drawable.notlife);
-
-            lost1life.setImageBitmap(lost1life);
-        } else if (antalLiv == 2){
-            darthSheep = BitmapFactory.decodeResource(this.getResources(), R.drawable.darthsheep);
-
-            fence.setImageBitmap(darthSheep);
-        } else {
-            hiscoreToMain(View view);
-        }
-
-    }*/
 
     public void backButton2(View view) {
         finish();

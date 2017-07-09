@@ -53,6 +53,9 @@ public class lvl1Activity extends MainActivity {
                     clickMeText.setText(nothing);
                     lvl1Sheep.setFlerePoint(false);
                 }
+
+
+
                 //if(count==sheepTotal()){
                 //    count= count-1;
                 //}
