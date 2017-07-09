@@ -23,14 +23,14 @@ import android.widget.TextView;
 public class CanvasView extends View {
     //Feltvariabler
     Bitmap standardSheep, lifeOne, lifeTwo, lifeThree, notlifeOne, notlifeTwo, notlifeThree,sheepFence, sheep3;
-    int sleepTime,widthDivideretSlut;
-    boolean sheepPosNotSet, sheepPosNotSet2, alive, lvl2;
+    int sleepTime,widthDivideretSlut, count;
+    boolean sheepPosNotSet, sheepPosNotSet2, sheepPosNotSet3, alive, lvl2;
     double angle;
     private float sheepPosX, sheepPosY, sheepPosX2, sheepPosY2, sheepPosX3, sheepPosY3, height, width;
     private int selectedSkin;
     Paint textColor;
     boolean playing;
-    boolean flerePoint, flerePoint2;
+    boolean flerePoint, flerePoint2, flerePoint3;
     public int health;
 
 
@@ -106,6 +106,7 @@ public class CanvasView extends View {
     public void animation(boolean lvl,int widthDivideret) {
         flerePoint = true;
         flerePoint2 = true;
+        flerePoint3 = true;
         widthDivideretSlut = widthDivideret;
         health = 3;
         alive = true;
@@ -114,10 +115,18 @@ public class CanvasView extends View {
         sleepTime = 20;
         sheepPosNotSet = true;
         sheepPosNotSet2 = true;
+        sheepPosNotSet3 = true;
         postInvalidate();
         Timer animate = new Timer();
         animate.start();
     }
+
+    public void abc (int aaa){
+        count = aaa;
+
+    }
+
+
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -143,24 +152,30 @@ public class CanvasView extends View {
         //Tegn hegn
 
 
+
         if (sheepPosNotSet) {
             standardSheep = Bitmap.createScaledBitmap(standardSheep, (int) (width / 3)+1, (int) (height / 3)+1, true);
-            sheepFence = Bitmap.createScaledBitmap(sheepFence, (int) (width / 3)+1, (int) (height / 3)+1, true);
-            sheep3 = Bitmap.createScaledBitmap(sheep3, (int) (width / 3)+1, (int) (height / 3)+1, true);
             sheepPosX = width;
             sheepPosY = height - (height / 5) * 3;
-            sheepPosY3 = width;
-            sheepPosX3 = height - (height /5) /4;
+
             sheepPosNotSet = false;
         }
 
         if (sheepPosNotSet2) {
             sheepFence = Bitmap.createScaledBitmap(sheepFence, (int) (width / 3)+1, (int) (height / 3)+1, true);
             sheepPosX2 = width;
-            sheepPosY2 = height - (height / 5) * 2;
+            sheepPosY2 = height - (height / 5) * 4;
 
             sheepPosNotSet2 = false;
         }
+        if (sheepPosNotSet3) {
+            sheep3 = Bitmap.createScaledBitmap(sheep3, (int) (width / 3)+1, (int) (height / 3)+1, true);
+            sheepPosX3 = width;
+            sheepPosY3 = height - (height / 5) * 2;
+
+            sheepPosNotSet3 = false;
+        }
+
         if (lvl2) {
             lifeOne = Bitmap.createScaledBitmap(lifeOne, (int) (width/6), (int) (width / 6), true);
             lifeTwo = Bitmap.createScaledBitmap(lifeTwo, (int) (width/6), (int) (width / 6), true);
@@ -225,7 +240,15 @@ public class CanvasView extends View {
     }
 
     public void setFlerePoint2 (boolean point2){
-        flerePoint = point2;
+        flerePoint2 = point2;
+    }
+
+    public boolean getFlerePoint3(){
+        return flerePoint3;
+    }
+
+    public void setFlerePoint3 (boolean point3){
+        flerePoint3 = point3;
     }
 
 
@@ -245,21 +268,23 @@ public class CanvasView extends View {
                     } catch (InterruptedException e) {
                         //Nothing
                     }
+
                     if (sheepPosX > -width /3) {
-                        sheepPosX -= width / widthDivideretSlut;
+                        sheepPosX -= width / (widthDivideretSlut + (count*2));
                         sheepPosY = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX * sheepPosX)) + (((-height * 2) / width) * sheepPosX) + (height / 2);
+
                     }
 
                     if(lvl2){
 
                         if (sheepPosX2 > -width /3) {
-                            sheepPosX2 -= width / widthDivideretSlut;
+                            sheepPosX2 -= (width / (widthDivideretSlut)) + 2*count;
                             sheepPosY2 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX2 * sheepPosX2)) + (((-height * 2) / width) * sheepPosX2) + (height / 2);
                         }
 
                         if (sheepPosX3 > -width /3) {
-                            sheepPosX3 -= width / widthDivideretSlut;
-                            sheepPosY3 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX3 * sheepPosX3)) + (((-height * 2) / width) * sheepPosX3) + (height / 2);
+                            sheepPosX3 -= (width / widthDivideretSlut) +2*count;
+                            sheepPosY3 = (((-4f * ((-height * 2) / (width * width)) * 1) / 3) * (sheepPosX3 * sheepPosX3)) + (((-height * 2) / width) * sheepPosX3) + (height / 4);
                         }
 
                     }
@@ -274,6 +299,7 @@ public class CanvasView extends View {
                                 playing = false;
                             }
                 }
+
                 if (flerePoint2 && lvl2) {
                     health--;
                     if (health == 0) {
@@ -281,12 +307,24 @@ public class CanvasView extends View {
                         playing = false;
                     }
                 }
+
+                if (flerePoint3 && lvl2) {
+                    health--;
+                    if (health == 0) {
+                        alive = false;
+                        playing = false;
+                    }
+                }
+
                 sheepPosX = 0;
                 sheepPosX2 = 0;
+                sheepPosX3 = 0;
                 flerePoint = true;
                 flerePoint2 = true;
+                flerePoint3 = true;
                 sheepPosNotSet = true;
                 sheepPosNotSet2 = true;
+                sheepPosNotSet3 = true;
                 postInvalidate();
             }
         }

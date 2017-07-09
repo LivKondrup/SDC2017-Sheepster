@@ -15,8 +15,7 @@ public class lvl1Activity extends MainActivity {
     private ImageView fence;
     private TextView clickCount,clickMeText;
     private CanvasView lvl1Sheep;
-    private Paint sky;
-    public boolean bcount = true;
+    private Paint sky;       // hvorfor er denne variabel oprettet, dette er det eneste sted den står?
     String nothing;
 
 
@@ -31,7 +30,6 @@ public class lvl1Activity extends MainActivity {
         clickMeText = findViewById(R.id.clickSheep2TextView);
         lvl1Sheep = (CanvasView) findViewById(R.id.lvl1Sheep);
         fence = (ImageView) findViewById(R.id.fence);
-
 
 
 
@@ -78,7 +76,6 @@ public class lvl1Activity extends MainActivity {
         });
 
         lvl1Sheep.animation(false,300);
-
     }
 
   /*  public int sheepTotal () {

@@ -18,11 +18,10 @@ public class lvl2Activty extends MainActivity {
     private TextView clickCount2;
     private CanvasView lvl2Sheep;
     private ImageView fence2;
-    private int count3;
     public String nothing2;
     public String count5;
-    private int antalLiv=3;
-    private int highscoreGemt1, selectedSkin;
+    private int antalLiv=3;     // hvorfor er denne variabel oprettet, dette er det eneste sted den står?
+    private int highscoreGemt1, selectedSkin;    // hvorfor er denne variabel oprettet, dette er det eneste sted den står?
     public static String highscoreGemt = "highscoreGemt";
     private TextView highscoreLvl2, clickMeText2;
 
@@ -54,14 +53,15 @@ public class lvl2Activty extends MainActivity {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 float sheepPosX = lvl2Sheep.getSheepPosX();
                 float sheepPosY = lvl2Sheep.getSheepPosY();
-                float height = view.getHeight();
-                float width = view.getWidth();
-                float X = motionEvent.getX();
-                float Y = motionEvent.getY();
                 float sheepPosX2 =lvl2Sheep.getSheepPosX2();
                 float sheepPosY2 = lvl2Sheep.getSheepPosY2();
                 float sheepPosX3 =lvl2Sheep.getSheepPosX3();
                 float sheepPosY3 = lvl2Sheep.getSheepPosY3();
+
+                float height = view.getHeight();
+                float width = view.getWidth();
+                float X = motionEvent.getX();
+                float Y = motionEvent.getY();
 
 
                 if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl2Sheep.getFlerePoint()) {
@@ -70,11 +70,10 @@ public class lvl2Activty extends MainActivity {
                     clickCount2.setText(count2);
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
-
                     lvl2Sheep.setFlerePoint(false);
                 }
 
-                if (X > sheepPosX2 && X < sheepPosX2 + width / 3 && Y > sheepPosY2 && Y < sheepPosY2 + height / 3 && lvl2Sheep.getFlerePoint()) {
+                if (X > sheepPosX2 && X < sheepPosX2 + width / 3 && Y > sheepPosY2 && Y < sheepPosY2 + height / 3 && lvl2Sheep.getFlerePoint2()) {
                     count++;
                     String count2 = "Sheep: " + count;
                     clickCount2.setText(count2);
@@ -83,13 +82,15 @@ public class lvl2Activty extends MainActivity {
                     lvl2Sheep.setFlerePoint2(false);
                 }
 
-                if (X > sheepPosX3 && X < sheepPosX3 + width / 3 && Y > sheepPosY3 && Y < sheepPosY3 + height / 3 && lvl2Sheep.getFlerePoint()) {
+
+
+                if (X > sheepPosX3 && X < sheepPosX3 + width / 3 && Y > sheepPosY3 && Y < sheepPosY3 + height / 3 && lvl2Sheep.getFlerePoint3()) {
                     count++;
                     String count2 = "Sheep: " + count;
                     clickCount2.setText(count2);
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
-                    lvl2Sheep.setFlerePoint(false);
+                    lvl2Sheep.setFlerePoint3(false);
                 }
                 //if(count==sheepTotal()){
                 //    count= count-1;
@@ -106,13 +107,14 @@ public class lvl2Activty extends MainActivity {
 
 
                 }*/
+                lvl2Sheep.abc(count);
                 return false;
             }
 
 
         });
 
-        lvl2Sheep.animation(true,100);
+        lvl2Sheep.animation(true,250);
         new TjecAlive().start();
     }
 
