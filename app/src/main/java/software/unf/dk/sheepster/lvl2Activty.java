@@ -39,6 +39,7 @@ public class lvl2Activty extends MainActivity {
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
+
         final MediaPlayer mp1;
         if(selectedSkin == 11){
             mp1 = MediaPlayer.create(this, R.raw.lightsaber);}

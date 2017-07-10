@@ -54,12 +54,11 @@
         android:id="@+id/highscoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27sp"
-        android:text="Highscore : 0"
-        android:textSize="25sp"
-        android:visibility="visible"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27sp"
+        android:textSize="25sp"
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/lvl2ButtonTextView"

@@ -31,20 +31,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Intent hiscoreIntentString = getIntent();
-        highscore = hiscoreIntentString.getStringExtra("Highscore");
-        highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
-        highScoreTextView.setText(highscore);*/
-
         //Hente gemt highscore
         SharedPreferences prefs = getSharedPreferences("prefs", lvl2Activty.MODE_PRIVATE);
         highscoreGemt1 = prefs.getInt("HighscoreGemt", highscoreGemt1);
 
         //Opdater TextView
-        highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
-        highScoreTextView.setText("Highscore: " + highscoreGemt1);
-
-
+        //highScoreTextView = (TextView) findViewById(R.id.highscoreTextView);
+        //highScoreTextView.setText("Highscore: " + highscoreGemt1);
     }
 
     //Knappen kalder denne metode, som kalder metoden i CanvasView. I kan ikke få knapper til direkte at kalde metoder i jeres View

@@ -30,8 +30,8 @@ public class skinSelectorActivity extends Activity {
         selectedSkin = prefs2.getInt("SkinGemt", selectedSkin);
 
         //Opdater TextView
-        highscoreTextview = (TextView) findViewById(R.id.skinSelectorHighscoreTextView);
-        highscoreTextview.setText("Highscore: " + highscoreGemt1);
+        //highscoreTextview = (TextView) findViewById(R.id.skinSelectorHighscoreTextView);
+        //highscoreTextview.setText("Highscore: " + highscoreGemt1);
     }
     public void backButton3 (View view) {
         finish();
