@@ -109,7 +109,7 @@ public class lvl2Activty extends MainActivity {
 
                 if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl2Sheep.getFlerePoint()) {
                     count++;
-                    String count2 = "Sheep: " + count;
+                    String count2 = "" + count;
                     clickCount2.setText(count2);
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
@@ -119,7 +119,7 @@ public class lvl2Activty extends MainActivity {
 
                 if (X > sheepPosX2 && X < sheepPosX2 + width / 3 && Y > sheepPosY2 && Y < sheepPosY2 + height / 3 && lvl2Sheep.getFlerePoint2()) {
                     count++;
-                    String count2 = "Sheep: " + count;
+                    String count2 = "" + count;
                     clickCount2.setText(count2);
                     nothing2 = "";
                     clickMeText2.setText(nothing2);
@@ -131,7 +131,7 @@ public class lvl2Activty extends MainActivity {
 
                 if (X > sheepPosX3 && X < sheepPosX3 + width / 3 && Y > sheepPosY3 && Y < sheepPosY3 + height / 3 && lvl2Sheep.getFlerePoint3()) {
                     count++;
-                    String count2 = "Sheep: " + count;
+                    String count2 = "" + count;
                     clickCount2.setText(count2);
                     nothing2 = "";
                     clickMeText2.setText(nothing2);

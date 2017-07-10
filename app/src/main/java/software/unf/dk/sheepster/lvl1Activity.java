@@ -63,7 +63,7 @@ public class lvl1Activity extends MainActivity {
 
                 if (X > sheepPosX && X < sheepPosX + width / 3 && Y > sheepPosY && Y < sheepPosY + height / 3 && lvl1Sheep.getFlerePoint()) {
                     count++;
-                    String count2 = "Sheep: " + count;
+                    String count2 = "" + count;
                     clickCount.setText(count2);
                     nothing = "";
                     clickMeText.setText(nothing);
